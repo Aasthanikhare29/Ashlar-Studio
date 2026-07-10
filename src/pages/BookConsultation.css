@@ -1,0 +1,71 @@
+.consult-hero {
+  padding: 6rem 0 2rem;
+  background: #1a1a2e;
+}
+.consult-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.consult-types h2, .consult-form-wrap h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+.consult-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.consult-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.consult-option:hover { border-color: #E86A33; }
+.consult-option.selected { border-color: #E86A33; background: rgba(232,106,51,0.04); }
+.consult-option-radio { flex-shrink: 0; }
+.consult-radio-btn {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease;
+}
+.consult-radio-btn.checked { border-color: #E86A33; }
+.consult-radio-btn.checked::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #E86A33;
+  border-radius: 50%;
+}
+.consult-option-info { flex: 1; }
+.consult-option-info h4 { font-size: 1rem; font-weight: 600; color: #1a1a2e; margin-bottom: 0.25rem; }
+.consult-option-info p { font-size: 0.875rem; color: #666; }
+.consult-option-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #E86A33;
+  white-space: nowrap;
+}
+.consult-form-wrap {
+  background: #fff;
+  border-radius: 4px;
+  padding: 2.5rem;
+  border: 1px solid #f0f0f0;
+}
+.consult-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+@media (max-width: 768px) {
+  .consult-grid { grid-template-columns: 1fr; }
+}

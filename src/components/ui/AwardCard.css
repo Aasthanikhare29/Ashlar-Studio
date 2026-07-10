@@ -1,0 +1,46 @@
+.award-card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
+.award-card.animate {
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.award-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.award-card-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(232,106,51,0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+.award-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.375rem;
+}
+.award-card-org {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+.award-card-year {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #E86A33;
+  background: rgba(232,106,51,0.08);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}

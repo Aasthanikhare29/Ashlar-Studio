@@ -1,0 +1,23 @@
+.blog-hero {
+  padding: 6rem 0 2rem;
+  background: #1a1a2e;
+}
+.blog-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  justify-content: center;
+}
+.blog-cat-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+}
+.blog-cat-btn:hover, .blog-cat-btn.active { background: #E86A33; color: #fff; border-color: #E86A33; }

@@ -1,0 +1,168 @@
+.service-card {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .6s ease, box-shadow .3s ease;
+}
+
+.service-card.animate {
+  opacity: 1;
+}
+
+.service-card:hover {
+  box-shadow: 0 18px 45px rgba(0,0,0,.08);
+}
+
+/* Image */
+
+.service-card-image {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.45),
+    rgba(0,0,0,.05)
+  );
+}
+
+/* Badge */
+
+.service-card-badge {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  z-index: 2;
+
+  background: rgba(255,255,255,.95);
+
+  color: #E86A33;
+
+  padding: 8px 14px;
+
+  border-radius: 4px;
+
+  font-size: .72rem;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+/* Content */
+
+.service-card-content {
+  padding: 28px;
+}
+
+.service-card-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(232,106,51,.08);
+
+  border-radius: 6px;
+
+  color: #E86A33;
+
+  margin-bottom: 18px;
+}
+
+.service-card-title {
+  font-size: 1.65rem;
+  line-height: 1.25;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+}
+
+.service-card-desc {
+  font-size: .95rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+/* Features */
+
+.service-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.service-card-features span {
+  padding: 7px 14px;
+
+  background: #f7f7f7;
+
+  border: 1px solid #ececec;
+
+  border-radius: 30px;
+
+  font-size: .78rem;
+
+  color: #555;
+
+  font-weight: 500;
+}
+
+/* Button */
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #E86A33;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: color .25s ease;
+}
+
+.service-card-link:hover {
+  color: #c95422;
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+  .service-card-image{
+      height:220px;
+  }
+
+  .service-card-content{
+      padding:22px;
+  }
+
+  .service-card-title{
+      font-size:1.35rem;
+  }
+
+}

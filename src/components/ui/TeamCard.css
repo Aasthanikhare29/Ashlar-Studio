@@ -1,0 +1,69 @@
+.team-card {
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
+.team-card.animate {
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+.team-card:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.team-card-image {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+.team-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.team-card-social {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.team-card:hover .team-card-social { opacity: 1; }
+.team-card-social a {
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a2e;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.team-card-social a:hover { background: #E86A33; color: #fff; }
+.team-card-content { padding: 1.5rem; }
+.team-card-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.25rem;
+}
+.team-card-role {
+  font-size: 0.875rem;
+  color: #E86A33;
+  font-weight: 500;
+}
+.team-card-bio {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #666;
+  margin-top: 0.75rem;
+}

@@ -1,0 +1,43 @@
+.projects-hero {
+  padding: 6rem 0 2rem;
+  background: #1a1a2e;
+}
+.projects-filters {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.filter-group label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  display: block;
+  margin-bottom: 0.625rem;
+}
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.filter-chip {
+  padding: 0.5rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s ease;
+}
+.filter-chip:hover { border-color: #E86A33; color: #E86A33; }
+.filter-chip.active { background: #E86A33; color: #fff; border-color: #E86A33; }
+.projects-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-size: 1.0625rem;
+}
