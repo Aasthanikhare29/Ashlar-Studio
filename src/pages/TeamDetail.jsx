@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import { teamMembers } from '../data/team';
 import CTA from '../components/ui/CTA';
 import {
@@ -30,9 +31,34 @@ export default function TeamDetail() {
   }
 
   const socialLinks = Object.entries(member.social || {});
+  const tdRef = useRef(null);
+
+  const accent = member.accentColor || '#E86A33';
+  const r = parseInt(accent.slice(1,3), 16);
+  const g = parseInt(accent.slice(3,5), 16);
+  const b = parseInt(accent.slice(5,7), 16);
+  const lighten = (c) => Math.min(255, c + Math.floor((255 - c) * 0.4));
+  const accentLight = `rgb(${lighten(r)}, ${lighten(g)}, ${lighten(b)})`;
+
+  const darken = (c, f) => Math.round(c * f);
+  const heroStart = `rgb(${darken(r, 0.35)}, ${darken(g, 0.35)}, ${darken(b, 0.35)})`;
+  const heroMid = `rgb(${darken(r, 0.55)}, ${darken(g, 0.55)}, ${darken(b, 0.55)})`;
+  const heroEnd = `rgb(${darken(r, 0.75)}, ${darken(g, 0.75)}, ${darken(b, 0.75)})`;
+  const heroBg = `linear-gradient(160deg, ${heroStart} 0%, ${heroMid} 40%, ${heroEnd} 100%)`;
+
+  useEffect(() => {
+    const el = tdRef.current;
+    if (!el) return;
+    el.style.setProperty('--td-accent', accent);
+    el.style.setProperty('--td-accent-r', String(r));
+    el.style.setProperty('--td-accent-g', String(g));
+    el.style.setProperty('--td-accent-b', String(b));
+    el.style.setProperty('--td-accent-light', accentLight);
+    el.style.setProperty('--td-hero-bg', heroBg);
+  }, [accent, r, g, b, accentLight, heroBg]);
 
   return (
-    <div className="td">
+    <div className="td" ref={tdRef}>
       <section className="td-hero">
         <div className="td-hero-bg">
           <div className="td-hero-pattern" />

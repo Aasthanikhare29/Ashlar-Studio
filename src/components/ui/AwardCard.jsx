@@ -1,6 +1,9 @@
 import {
   Armchair,
+  BadgeCheck,
   Building2,
+  Compass,
+  HardHat,
   House,
   Landmark,
   Leaf,
@@ -15,16 +18,25 @@ import "./AwardCard.css";
 const getAwardIcon = (title = "") => {
   const normalizedTitle = title.toLowerCase();
 
+  if (normalizedTitle.includes("leed")) return Leaf;
+  if (normalizedTitle.includes("igbc")) return Leaf;
+  if (normalizedTitle.includes("council of architecture")) return Building2;
+  if (normalizedTitle.includes("narb")) return Landmark;
+  if (normalizedTitle.includes("professional engineer")) return HardHat;
+  if (normalizedTitle.includes("chartered engineer")) return HardHat;
+  if (normalizedTitle.includes("ncidq")) return Armchair;
+  if (normalizedTitle.includes("architect")) return Building2;
+  if (normalizedTitle.includes("engineer")) return HardHat;
+  if (normalizedTitle.includes("interior")) return Armchair;
   if (normalizedTitle.includes("residential")) return House;
   if (normalizedTitle.includes("sustainable")) return Leaf;
   if (normalizedTitle.includes("hospitality")) return Building2;
   if (normalizedTitle.includes("firm")) return Trophy;
-  if (normalizedTitle.includes("interior")) return Armchair;
   if (normalizedTitle.includes("urban")) return Map;
   if (normalizedTitle.includes("commercial")) return Landmark;
   if (normalizedTitle.includes("innovation")) return Lightbulb;
 
-  return Trophy;
+  return BadgeCheck;
 };
 
 function TwoToneIcon({ icon: Icon }) {
@@ -79,7 +91,7 @@ export default function AwardCard({ award, index = 0 }) {
         </span>
 
         <span className="award-card-status">
-          {award.status || "Winner"}
+          {award.status || "Certified"}
         </span>
       </div>
     </article>

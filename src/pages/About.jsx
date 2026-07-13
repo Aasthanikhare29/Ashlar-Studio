@@ -17,46 +17,54 @@ import { teamMembers } from "../data/team";
 
 import "./About.css";
 
-const awards = [
+const certifications = [
   {
-    title: "Best Residential Architecture",
-    organization: "Architecture Excellence Awards",
+    title: "Council of Architecture (COA) Registration",
+    organization: "Council of Architecture, India",
     year: 2024,
+    status: "Certified",
   },
   {
-    title: "Sustainable Project of the Year",
-    organization: "Green Building Council",
+    title: "LEED AP BD+C",
+    organization: "Green Business Certification Inc.",
     year: 2024,
+    status: "Accredited",
   },
   {
-    title: "Best Hospitality Design",
-    organization: "Design Innovation Awards",
+    title: "NCARB Certification",
+    organization: "National Council of Architectural Registration Boards",
     year: 2023,
+    status: "Certified",
   },
   {
-    title: "Firm of the Year",
-    organization: "National Architecture Association",
+    title: "Professional Engineer (PE) License",
+    organization: "State Board of Professional Engineers",
     year: 2023,
+    status: "Licensed",
   },
   {
-    title: "Interior Design Excellence",
-    organization: "Design Today Magazine",
+    title: "Chartered Engineer (CIE)",
+    organization: "Institution of Engineers, India",
     year: 2022,
+    status: "Chartered",
   },
   {
-    title: "Urban Planning Award",
-    organization: "City Planning Institute",
+    title: "NCIDQ Certified",
+    organization: "National Council for Interior Design Qualification",
     year: 2022,
+    status: "Certified",
   },
   {
-    title: "Best Commercial Project",
-    organization: "Real Estate Awards",
+    title: "LEED AP ID+C",
+    organization: "Green Business Certification Inc.",
     year: 2021,
+    status: "Accredited",
   },
   {
-    title: "Innovation in Architecture",
-    organization: "Tech in Design Forum",
+    title: "IGBC Accredited Professional",
+    organization: "Indian Green Building Council",
     year: 2021,
+    status: "Accredited",
   },
 ];
 
@@ -241,16 +249,16 @@ export default function About() {
       <section className="section section--dark">
         <div className="container">
           <SectionTitle
-            subtitle="Recognition"
-            title="Awards & Accolades"
-            description="Our work has been recognized by leading institutions and publications in the design industry."
+            subtitle="Professional Credentials"
+            title="Certifications & Licenses"
+            description="Our team holds key certifications and professional licenses across architecture, civil engineering, and interior design."
           />
 
           <div className="awards-grid">
-            {awards.map((award, index) => (
+            {certifications.map((cert, index) => (
               <AwardCard
-                key={`${award.title}-${award.year}`}
-                award={award}
+                key={`${cert.title}-${cert.year}`}
+                award={cert}
                 index={index}
               />
             ))}

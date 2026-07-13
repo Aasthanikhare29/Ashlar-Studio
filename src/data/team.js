@@ -16,6 +16,7 @@ export const teamMembers = [
     social: { linkedin: '#', twitter: '#', instagram: '#', facebook: '#' },
     education: 'M.Arch Urban Planning',
     experience: '15+ years',
+    accentColor: '#E86A33',
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ export const teamMembers = [
     social: { linkedin: '#', twitter: '#', instagram: '#', facebook: '#' },
     education: 'B.Arch Urban Planning',
     experience: '12+ years',
+    accentColor: '#138ab8',
   },
   {
     id: 3,
