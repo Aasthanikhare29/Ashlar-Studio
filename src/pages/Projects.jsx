@@ -28,7 +28,22 @@ export default function Projects() {
     <div className="page-wrapper">
       <section className="projects-hero">
         <div className="container">
-          <SectionTitle subtitle="Our Portfolio" title="Featured Projects" description="Explore our portfolio of exceptional projects that showcase our expertise across diverse sectors." />
+          <SectionTitle subtitle={
+            <span style={{color:"#fffafa"}}>
+              "Our Portfolio" 
+            </span>
+          }
+          title={
+            <span style={{color:"#fff"}}>
+              "Featured Projects"
+            </span>
+          } 
+          description={
+            <span style={{color:"#fffff0"}}>
+              "Explore our portfolio of exceptional projects that showcase our expertise across diverse sectors."
+            </span>
+          }
+          />
         </div>
       </section>
 

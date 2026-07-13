@@ -1,46 +1,229 @@
 .award-card {
-  background: #fff;
+  position: relative;
+  min-height: 240px;
+  padding: 1.4rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  border: 1px solid #e9e5df;
   border-radius: 4px;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid #f0f0f0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  text-align: left;
+
   opacity: 0;
 }
-.award-card.animate {
+
+.award-card--visible {
   opacity: 1;
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
 }
+
 .award-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  border-color: rgba(232, 106, 51, 0.45);
+  border-left-color: #e86a33;
+
+  box-shadow:
+    0 16px 35px rgba(26, 26, 46, 0.08),
+    0 4px 10px rgba(26, 26, 46, 0.04);
 }
+
+/* Two-tone icon container */
+
 .award-card-icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(232,106,51,0.08);
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 0.9rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem;
+
+  background: #fbf1ec;
+  border-radius: 10px;
+
+  flex-shrink: 0;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
+
+.award-card:hover .award-card-icon {
+  background: #faebe4;
+}
+
+.award-card-icon-layer {
+  position: relative;
+  width: 29px;
+  height: 29px;
+}
+
+.award-icon {
+  position: absolute;
+  inset: 0;
+
+  width: 29px;
+  height: 29px;
+
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  transition: transform 0.3s ease;
+}
+
+/* Full orange icon */
+
+.award-icon--orange {
+  color: #e86a33;
+}
+
+/*
+  Teal top section layered over the orange icon.
+  This gives every Lucide icon a consistent two-tone appearance.
+*/
+
+.award-icon--teal {
+  color: #0f766e;
+  clip-path: inset(0 0 52% 0);
+}
+
+.award-card:hover .award-icon {
+  transform: scale(1.05);
+}
+
+/* Main content */
+
+.award-card-content {
+  flex: 1;
+}
+
 .award-card-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 0.375rem;
+  max-width: 270px;
+  margin: 0;
+
+  color: #151821;
+
+  font-size: clamp(1.1rem, 1.45vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
 }
+
 .award-card-org {
+  max-width: 260px;
+  margin: 0.55rem 0 0;
+
+  color: #6b6b70;
+
+  font-family: "Inter", "Poppins", sans-serif;
   font-size: 0.875rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+  font-weight: 400;
+  line-height: 1.45;
 }
+
+/* Bottom metadata */
+
+.award-card-footer {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  border-top: 1px solid #ece9e4;
+}
+
 .award-card-year {
-  display: inline-block;
+  color: #e86a33;
+
+  font-family: "Inter", "Poppins", sans-serif;
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: #E86A33;
-  background: rgba(232,106,51,0.08);
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
+  font-weight: 700;
+}
+
+.award-card-status {
+  color: #0f766e;
+
+  font-family: "Inter", "Poppins", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .award-card {
+    min-height: 230px;
+    padding: 1.3rem;
+  }
+
+  .award-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .award-card {
+    min-height: 220px;
+    padding: 1.2rem;
+  }
+
+  .award-card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.8rem;
+  }
+
+  .award-card-icon-layer,
+  .award-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .award-card-title {
+    font-size: 1.25rem;
+  }
+
+  .award-card-org {
+    font-size: 0.84rem;
+  }
+
+  .award-card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .award-card {
+    min-height: 210px;
+    padding: 1.1rem;
+  }
+  .award-card-status {
+    font-size: 0.62rem;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .award-card,
+  .award-card-icon,
+  .award-icon {
+    transition: none;
+  }
+
+  .award-card {
+    opacity: 1;
+    transform: none;
+  }
 }

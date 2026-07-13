@@ -256,7 +256,7 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(232, 106, 51, 0.22),
+    rgba(42, 152, 176, 0.22),
     transparent 45%
   );
   opacity: 0;
@@ -272,7 +272,7 @@
   z-index: 1;
   display: block;
   margin-bottom: 14px;
-  color: #e86a33;
+  color: #2a98b0;
   font-family: var(--font-heading);
   font-size: 40px;
   font-weight: 800;

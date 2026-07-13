@@ -25,9 +25,63 @@
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+
+.project-card-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.project-card:hover .project-card-arrow {
+  opacity: 1;
+}
+
+.project-card-arrow:hover {
+  background: #fff;
+}
+
+.project-card-arrow--left { left: 8px; }
+.project-card-arrow--right { right: 8px; }
+
+.project-card-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+}
+
+.project-card-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  transition: background 0.2s ease;
+}
+
+.project-card-dot.active {
+  background: #fff;
+}
+
 .project-card-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: rgba(0,0,0,0.4);
   display: flex;
   align-items: center;

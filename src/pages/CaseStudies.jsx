@@ -31,7 +31,9 @@ export default function CaseStudies() {
     <div className="page-wrapper">
       <section className="case-studies-hero">
         <div className="container">
-          <SectionTitle subtitle="Case Studies" title="In-Depth Project Analysis" description="Explore detailed case studies that dive into our design process, challenges, and solutions." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Case Studies" </span>}
+          title={<span style={{color:"#fff"}}>"In-Depth Project Analysis" </span>}
+          description={<span style={{color:"#fffff0"}}>"Explore detailed case studies that dive into our design process, challenges, and solutions." </span>}/>
         </div>
       </section>
 

@@ -10,9 +10,9 @@ import ProjectDetail from './pages/ProjectDetail';
 import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
-import Team from './pages/Team';
 import Careers from './pages/Careers';
 import BookConsultation from './pages/BookConsultation';
+import TeamDetail from './pages/TeamDetail';
 import Gallery from './pages/Gallery';
 import CaseStudies from './pages/CaseStudies';
 import CaseStudyDetail from './pages/CaseStudyDetail';
@@ -41,12 +41,12 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/team" element={<Team />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/book-consultation" element={<BookConsultation />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+        <Route path="/team/:slug" element={<TeamDetail />} />
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/privacy" element={<Legal />} />
         <Route path="/terms" element={<Legal />} />

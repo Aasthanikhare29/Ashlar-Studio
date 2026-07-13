@@ -24,7 +24,10 @@ export default function Careers() {
     <div className="page-wrapper">
       <section className="careers-hero">
         <div className="container">
-          <SectionTitle subtitle="Join Us" title="Build Your Career at Ashlar Studio" description="We're looking for passionate individuals who share our commitment to design excellence and innovation." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Join Us" </span>}
+          title={<span style={{color:"#fff"}}>"Build Your Career at Ashlar Studio" </span>}
+          description={<span style={{color:"#fffff0"}}>"We're looking for passionate individuals who share our commitment to design excellence and innovation."</span>}
+          />
         </div>
       </section>
 

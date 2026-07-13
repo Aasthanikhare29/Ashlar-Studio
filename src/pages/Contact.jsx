@@ -15,7 +15,10 @@ export default function Contact() {
     <div className="page-wrapper">
       <section className="contact-hero">
         <div className="container">
-          <SectionTitle subtitle="Get in Touch" title="Let's Start a Conversation" description="Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Get in Touch" </span>}
+          title={<span style={{color:"#fff"}}>"Let's Start a Conversation" </span>}
+          description={<span style={{color:"#fffff0"}}>"Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life."</span>}
+           />
         </div>
       </section>
 
@@ -38,7 +41,7 @@ export default function Contact() {
                   <div className="contact-info-icon"><Icon name="phone" size={20} /></div>
                   <div>
                     <h4>Phone</h4>
-                    <p>+91 22 4567 8900<br />+91 98765 43210</p>
+                    <p>+91 77578 41518<br />+91 77989 28535</p>
                   </div>
                 </div>
                 <div className="contact-info-item">
@@ -89,7 +92,7 @@ export default function Contact() {
                       <option value="interior">Interior Design</option>
                       <option value="landscape">Landscape Design</option>
                       <option value="visualization">3D Visualization</option>
-                      <option value="urban">Urban Design</option>
+                      <option value="urban">Urban Planning</option>
                       <option value="sustainable">Sustainable Design</option>
                       <option value="renovation">Renovation</option>
                       <option value="turnkey">Turnkey Solutions</option>
@@ -104,6 +107,18 @@ export default function Contact() {
               )}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="map-section">
+        <div className="container">
+          <iframe
+            src="https://maps.google.com/maps?q=Eureka+Coworking+Nagpur&output=embed"
+            className="google-map"
+            allowFullScreen
+            loading="lazy"
+            title="Eureka Coworking Location"
+          ></iframe>
         </div>
       </section>
     </div>

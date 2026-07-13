@@ -1,19 +1,87 @@
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import './AwardCard.css';
+import {
+  Armchair,
+  Building2,
+  House,
+  Landmark,
+  Leaf,
+  Lightbulb,
+  Map,
+  Trophy,
+} from "lucide-react";
+
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import "./AwardCard.css";
+
+const getAwardIcon = (title = "") => {
+  const normalizedTitle = title.toLowerCase();
+
+  if (normalizedTitle.includes("residential")) return House;
+  if (normalizedTitle.includes("sustainable")) return Leaf;
+  if (normalizedTitle.includes("hospitality")) return Building2;
+  if (normalizedTitle.includes("firm")) return Trophy;
+  if (normalizedTitle.includes("interior")) return Armchair;
+  if (normalizedTitle.includes("urban")) return Map;
+  if (normalizedTitle.includes("commercial")) return Landmark;
+  if (normalizedTitle.includes("innovation")) return Lightbulb;
+
+  return Trophy;
+};
+
+function TwoToneIcon({ icon: Icon }) {
+  return (
+    <div className="award-card-icon" aria-hidden="true">
+      <div className="award-card-icon-layer">
+        {/* Orange base icon */}
+        <Icon
+          className="award-icon award-icon--orange"
+          size={29}
+          strokeWidth={1.8}
+        />
+
+        {/* Teal overlay */}
+        <Icon
+          className="award-icon award-icon--teal"
+          size={29}
+          strokeWidth={1.8}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function AwardCard({ award, index = 0 }) {
   const [ref, visible] = useScrollAnimation();
+  const Icon = getAwardIcon(award.title);
 
   return (
-    <div className={`award-card ${visible ? 'animate' : ''}`} ref={ref} style={{ transitionDelay: `${index * 0.08}s` }}>
-      <div className="award-card-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#E86A33"/>
-        </svg>
+    <article
+      ref={ref}
+      className={`award-card ${
+        visible ? "award-card--visible" : ""
+      }`}
+      style={{
+        transitionDelay: `${index * 0.08}s`,
+      }}
+    >
+      <TwoToneIcon icon={Icon} />
+
+      <div className="award-card-content">
+        <h3 className="award-card-title">{award.title}</h3>
+
+        <p className="award-card-org">
+          {award.organization}
+        </p>
       </div>
-      <h3 className="award-card-title">{award.title}</h3>
-      <p className="award-card-org">{award.organization}</p>
-      <span className="award-card-year">{award.year}</span>
-    </div>
+
+      <div className="award-card-footer">
+        <span className="award-card-year">
+          {award.year}
+        </span>
+
+        <span className="award-card-status">
+          {award.status || "Winner"}
+        </span>
+      </div>
+    </article>
   );
 }

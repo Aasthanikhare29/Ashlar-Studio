@@ -37,13 +37,6 @@ export default function ServiceCard({ service, index = 0 }) {
             ))}
           </div>
         )}
-
-        <Link
-          to={`/services#${service.id}`}
-          className="service-card-link"
-        >
-          Learn More <Icon name="arrow-right" size={14} />
-        </Link>
       </div>
     </article>
   );

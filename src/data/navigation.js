@@ -13,7 +13,7 @@ export const navLinks = [
           { name: 'Commercial', path: '/projects?category=Commercial' },
           { name: 'Hospitality', path: '/projects?category=Hospitality' },
           { name: 'Interior Design', path: '/projects?category=Interior+Design' },
-          { name: 'Urban Design', path: '/projects?category=Urban+Design' },
+          { name: 'Urban Planning', path: '/projects?category=Urban+Design' },
           { name: 'Master Planning', path: '/projects?category=Master+Planning' },
         ],
       },
@@ -29,7 +29,13 @@ export const navLinks = [
     ],
   },
   { name: 'Blog', path: '/blog' },
-  { name: 'Team', path: '/team' },
   { name: 'Contact', path: '/contact' },
-  { name: 'Careers', path: '/careers' },
+  {
+    name: 'More',
+    dropdown: [
+      { name: 'Careers', path: '/careers' },
+      { name: 'Gallery', path: '/gallery' },
+      { name: 'Case Studies', path: '/case-studies' },
+    ],
+  },
 ];

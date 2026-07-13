@@ -15,7 +15,7 @@ const galleryImages = [
   'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80',
   'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
   'https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80',
-  'https://images.unsplash.com/photo-1448630360428-65456859b2e0?w=600&q=80',
+  'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&q=80',
   'https://images.unsplash.com/photo-1464146072230-91cabc968266?w=600&q=80',
 ];
 
@@ -32,7 +32,10 @@ export default function Gallery() {
     <div className="page-wrapper">
       <section className="gallery-hero">
         <div className="container">
-          <SectionTitle subtitle="Gallery" title="Project Gallery" description="A visual journey through our portfolio of completed projects across sectors." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Gallery" </span>}
+          title={<span style={{color:"#fff"}}>"Project Gallery" </span>}
+          description={<span style={{color:"#fffff0"}}>"A visual journey through our portfolio of completed projects across sectors."</span>}
+           />
         </div>
       </section>
 

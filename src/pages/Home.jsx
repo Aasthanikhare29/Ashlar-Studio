@@ -152,6 +152,11 @@ export default function Home() {
               <ServiceCard key={s.id} service={s} index={i} />
             ))}
           </div>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+            <Link to="/services" className="btn btn-primary btn-lg">
+              View All Services
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -218,7 +223,7 @@ export default function Home() {
 
       <div className="stat-card">
         <AnimatedCounter end={50} suffix="+" start={statsVisible} />
-        <p>Design Awards</p>
+        <p>SQ. Feet Design</p>
       </div>
 
       <div className="stat-card">

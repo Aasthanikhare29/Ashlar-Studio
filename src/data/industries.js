@@ -71,8 +71,8 @@ export const industries = [
   },
   {
     id: 8,
-    title: 'Urban Design',
-    slug: 'urban-design',
+    title: 'Urban Planning',
+    slug: 'urban-planning',
     description: 'Master plans, public spaces, and infrastructure that shape better cities.',
     icon: 'map',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600',

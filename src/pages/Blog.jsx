@@ -4,14 +4,17 @@ import CTA from '../components/ui/CTA';
 import { blogPosts } from '../data/blog';
 import './Blog.css';
 
-const categories = ['All', 'Sustainability', 'Interior Design', 'Design Tips', 'Restoration', 'Urban Design'];
+const categories = ['All', 'Sustainability', 'Interior Design', 'Design Tips', 'Restoration', 'Urban Planning'];
 
 export default function Blog() {
   return (
     <div className="page-wrapper">
       <section className="blog-hero">
         <div className="container">
-          <SectionTitle subtitle="Our Blog" title="Design Insights & Inspiration" description="Thoughts on architecture, interior design, sustainability, and the creative process from our team." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Our Blog"</span>} 
+          title={<span style={{color:"#fff"}}>"Design Insights & Inspiration"</span>} 
+          description={<span style={{color:"#fffff0"}}>"Thoughts on architecture, interior design, sustainability, and the creative process from our team." </span>}
+          />
         </div>
       </section>
 

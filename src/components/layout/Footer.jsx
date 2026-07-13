@@ -31,7 +31,8 @@ export default function Footer() {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/projects">Projects</Link></li>
-              <li><Link to="/team">Our Team</Link></li>
+              <li><Link to="/gallery">Gallery</Link></li>
+              <li><Link to="/case-studies">Case Studies</Link></li>
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/careers">Careers</Link></li>
               <li><Link to="/contact">Contact</Link></li>
@@ -43,8 +44,8 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link to="/services#architecture">Architecture</Link></li>
               <li><Link to="/services#interior">Interior Design</Link></li>
-              <li><Link to="/services#landscape">Landscape</Link></li>
-              <li><Link to="/services#urban">Urban Design</Link></li>
+              <li><Link to="/services#landscape">BIM</Link></li>
+              <li><Link to="/services#urban">Urban Planning</Link></li>
               <li><Link to="/services#visualization">3D Visualization</Link></li>
               <li><Link to="/services#sustainable">Sustainable Design</Link></li>
               <li><Link to="/services#renovation">Renovation</Link></li>
@@ -58,7 +59,7 @@ export default function Footer() {
               <li><Link to="/projects?category=Commercial">Commercial</Link></li>
               <li><Link to="/projects?category=Hospitality">Hospitality</Link></li>
               <li><Link to="/projects?category=Interior+Design">Interior</Link></li>
-              <li><Link to="/projects?category=Urban+Design">Urban Design</Link></li>
+              <li><Link to="/projects?category=Urban+Planning">Urban Planning</Link></li>
               <li><Link to="/projects?category=Master+Planning">Master Planning</Link></li>
             </ul>
           </div>

@@ -35,7 +35,9 @@ export default function BookConsultation() {
     <div className="page-wrapper">
       <section className="consult-hero">
         <div className="container">
-          <SectionTitle subtitle="Book Now" title="Schedule a Consultation" description="Let's discuss your project. Choose the consultation type that best fits your needs." />
+          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Book Now"</span>} 
+          title={<span style={{color:"#fff"}}>"Schedule a Consultation" </span>}
+          description={<span style={{color:"#fffff0"}}>"Let's discuss your project. Choose the consultation type that best fits your needs." </span>}/>
         </div>
       </section>
 

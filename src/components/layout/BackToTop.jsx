@@ -1,13 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './BackToTop.css';
 
 const BackToTop = () => {
   const [visible, setVisible] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
+  const observerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setVisible(window.scrollY > 500);
+
+    const footer = document.querySelector('footer');
+    if (footer) {
+      observerRef.current = new IntersectionObserver(
+        ([entry]) => setFooterVisible(entry.isIntersecting),
+        { threshold: 0 }
+      );
+      observerRef.current.observe(footer);
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (observerRef.current) observerRef.current.disconnect();
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -16,7 +31,7 @@ const BackToTop = () => {
 
   return (
     <button
-      className={`back-to-top ${visible ? 'back-to-top--visible' : ''}`}
+      className={`back-to-top ${visible && !footerVisible ? 'back-to-top--visible' : ''}`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
       title="Back to top"
