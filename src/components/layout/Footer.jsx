@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Icon from '../ui/Icon';
 import './Footer.css';
 
 export default function Footer() {
@@ -11,8 +10,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              <Icon name="logo-mark" className="logo-mark" />
-              <span className="logo-text">Ashlar<span>Studio</span></span>
+              <img src="/ashlar.png" alt="Ashlar Studio" className="logo-mark" />
             </Link>
             <p className="footer-desc">
               A premier architecture and interior design studio crafting extraordinary spaces that inspire, endure, and elevate the human experience.

@@ -34,10 +34,9 @@ export default function Navbar() {
   return (
     <nav className={getNavClass()} ref={navRef} aria-label="Main navigation">
       <div className="navbar-inner container-wide">
-        <Link to="/" className="navbar-logo" aria-label="Ashlar Studio Home">
-          <Icon name="logo-mark" className="logo-mark" />
-          <span className="logo-text">Ashlar<span>Studio</span></span>
-        </Link>
+          <Link to="/" className="navbar-logo" aria-label="Ashlar Studio Home">
+            <img src="/ashlar.png" alt="Ashlar Studio" className="logo-mark" />
+          </Link>
 
         <div className={`navbar-menu ${mobileOpen ? 'open' : ''}`}>
           <ul className="navbar-links">

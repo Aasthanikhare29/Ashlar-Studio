@@ -20,6 +20,7 @@ import ThankYou from './pages/ThankYou';
 import NotFound from './pages/NotFound';
 import Legal from './pages/Legal';
 import Auth from './pages/Auth';
+import ComingSoon from './pages/ComingSoon';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/:id" element={<ComingSoon />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/blog" element={<Blog />} />

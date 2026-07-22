@@ -13,16 +13,14 @@
 
 .about-story {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 4rem;
-  align-items: center;
+  align-items: stretch;
 }
 
 .about-story-content {
   opacity: 0;
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+  transition: opacity 0.6s ease;
 }
 
 .about-story-content.animate {
@@ -44,11 +42,51 @@
   text-align: justify;
 }
 
-.about-story-image {
-  opacity: 0;
+.about-story-extra {
+  display: none;
+}
+
+.about-story-text.expanded .about-story-extra {
+  display: block;
+}
+
+.about-story-read-more {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #138da8;
+  cursor: pointer;
+
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.about-story-read-more:hover {
+  gap: 0.75rem;
+  color: #0f7086;
+}
+
+.about-story-read-more span {
+  font-size: 1rem;
+}
+
+/* Image matches the text column height */
+.about-story-image {
+  min-height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: opacity 0.6s ease;
 }
 
 .about-story-image.animate {
@@ -57,7 +95,8 @@
 
 .about-story-image img {
   width: 100%;
-  height: 650px;
+  height: 100%;
+  min-height: 100%;
   display: block;
   object-fit: cover;
   border-radius: 4px;

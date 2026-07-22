@@ -4,7 +4,7 @@ export const services = [
     title: 'Architecture',
     icon: 'architecture',
     image:'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=80',
-    description: 'Comprehensive architectural design from concept to construction, creating spaces that inspire and endure.',
+    description: 'We provide comprehensive architectural design services for residential and commercial projects, combining innovative planning, technical expertise, and sustainable solutions to create timeless, functional spaces',
     features: ['Concept Design', 'Schematic Design', 'Design Development', 'Construction Documents', 'Construction Administration'],
   },
   {
@@ -12,7 +12,7 @@ export const services = [
     title: 'Interior Design',
     icon: 'interior',
     image:'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80',
-    description: 'Thoughtful interior environments that blend aesthetics with functionality for exceptional living and working spaces.',
+    description: 'We create functional, elegant interior spaces through thoughtful planning, bespoke designs, material selection, and seamless execution, delivering personalized solutions for residential and commercial projects. ',
     features: ['Space Planning', 'Material Selection', 'Furniture Design', 'Lighting Design', 'Styling & Staging'],
   },
   {
@@ -20,7 +20,7 @@ export const services = [
     title: 'BIM',
     icon: 'BIM',
     image:'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80',
-    description: 'Harmonious outdoor spaces that connect people with nature through thoughtful landscape architecture.',
+    description: 'We deliver BIM solutions for residential, commercial, institutional, etc. projects, integrating intelligent 3D modeling, coordinated documentation, clash detection, and efficient project collaboration from design to construction. ',
     features: ['Garden Design', 'Hardscaping', 'Planting Design', 'Outdoor Living', 'Irrigation Planning'],
   },
   {
@@ -28,7 +28,7 @@ export const services = [
     title: '3D Visualization',
     icon: 'visualization',
     image:'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80',
-    description: 'Photorealistic renderings and immersive walkthroughs that bring architectural visions to life before construction.',
+    description: 'We create photorealistic architectural visualizations for residential, commercial, and mixed-use projects, transforming concepts into immersive 3D renders that communicate design intent with exceptional clarity. ',
     features: ['3D Modeling', 'Photorealistic Rendering', 'Virtual Walkthroughs', 'VR Experiences', 'Material Visualization'],
   },
   {
@@ -36,7 +36,7 @@ export const services = [
     title: 'Urban Planning',
     icon: 'urban',
     image:'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&q=80',
-    description: 'Strategic urban planning and design solutions that create vibrant, sustainable communities and public spaces.',
+    description: 'We provide strategic urban planning solutions, including master planning, development plans, GIS analysis, policy advisory, infrastructure planning, and sustainable urban development for public and private sectors. ',
     features: ['Master Planning', 'Public Realm Design', 'Transportation Planning', 'Zoning Analysis', 'Community Engagement'],
   },
   {
@@ -44,7 +44,7 @@ export const services = [
     title: 'Sustainable Design',
     icon: 'sustainable',
     image:'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80',
-    description: 'Environmentally responsible design strategies that reduce carbon footprint while enhancing occupant well-being.',
+    description: 'We deliver sustainable planning solutions through climate-responsive design, energy-efficient strategies, green building practices, resource optimization, and environmentally responsible development for resilient, future-ready projects.',
     features: ['Energy Analysis', 'Green Material Specification', 'Passive Design', 'LEED Consultation', 'Net-Zero Planning'],
   },
   {
@@ -52,15 +52,14 @@ export const services = [
     title: 'Renovation',
     icon: 'renovation',
     image:'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&q=80',
-    description: 'Expert renovation and adaptive reuse services that breathe new life into existing structures.',
+    description: "We transform existing spaces through innovative renovation solutions, enhancing functionality, aesthetics, structural performance, and value while preserving each project's unique character and architectural integrity. ",
     features: ['Historic Preservation', 'Adaptive Reuse', 'Interior Renovation', 'Facade Restoration', 'Structural Upgrades'],
   },
   {
     id: 'turnkey',
     title: 'Turnkey Solutions',
     icon: 'turnkey',
-    description:
-      'Professional valuation services for land, residential, commercial, and industrial properties, delivering accurate assessments for financial, legal, and investment purposes.',    
+    description:'We provide end-to-end turnkey solutions, managing design, planning, procurement, construction, and project execution to deliver high-quality spaces with efficiency, precision, and accountability',
     image:'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80',
     features: ['Project Management', 'Procurement', 'Construction', 'Interior Fit-out', 'Handover & Commissioning'],
   },
@@ -69,8 +68,7 @@ export const services = [
     title: 'Land & Building Valuation',
     icon: 'valuation',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
-    description:
-      'Professional valuation services for land, residential, commercial, and industrial properties, delivering accurate assessments for financial, legal, and investment purposes.',
+    description:'We provide trusted valuation services for land and buildings, supporting property transactions, financial planning, insurance, taxation, and investment decisions with professional accuracy. ',
     features: [
       'Property Valuation',
       'Land Assessment',
@@ -82,11 +80,11 @@ export const services = [
 ];
 
 export const industries = [
-  { id: 'residential', title: 'Residential', icon: 'residential', description: 'Luxury homes, apartments, and residential communities designed for modern living.' },
-  { id: 'commercial', title: 'Commercial', icon: 'commercial', description: 'Office spaces, retail centers, and commercial complexes that drive business success.' },
-  { id: 'hospitality', title: 'Hospitality', icon: 'hospitality', description: 'Hotels, resorts, and restaurants that create memorable guest experiences.' },
-  { id: 'healthcare', title: 'Healthcare', icon: 'healthcare', description: 'Hospitals, clinics, and wellness centers designed for healing and efficiency.' },
-  { id: 'education', title: 'Education', icon: 'education', description: 'Schools, universities, and learning environments that inspire education.' },
-  { id: 'retail', title: 'Retail', icon: 'retail', description: 'Retail spaces, showrooms, and shopping destinations that captivate customers.' },
-  { id: 'luxury', title: 'Luxury', icon: 'luxury', description: 'Exclusive high-end residential and commercial projects with unparalleled quality.' },
+  { id: 'residential', title: 'Residential', icon: 'residential', description: 'Designing personalized homes balancing functionality, comfort, aesthetics, sustainability, and timeless architectural excellence.'},
+  { id: 'commercial', title: 'Commercial', icon: 'commercial', description: 'Creating innovative commercial spaces enhancing business performance, efficiency, identity, and lasting value.' },
+  { id: 'hospitality', title: 'Hospitality', icon: 'hospitality', description: 'Crafting memorable hospitality environments delivering comfort, elegance, operational efficiency, and exceptional guest experiences.' },
+  { id: 'healthcare', title: 'Healthcare', icon: 'healthcare', description: 'Designing healing healthcare facilities prioritizing patient wellbeing, functionality, safety, and operational excellence.' },
+  { id: 'education', title: 'Education', icon: 'education', description: 'Creating inspiring educational environments fostering learning, collaboration, innovation, safety, and future readiness' },
+  { id: 'retail', title: 'Retail', icon: 'retail', description: 'Designing engaging retail spaces enhancing customer experiences, brand identity, and commercial success.' },
+  { id: 'luxury', title: 'Luxury', icon: 'luxury', description: 'Delivering bespoke luxury spaces combining refined aesthetics, craftsmanship, innovation, exclusivity, and sophistication.' },
 ];

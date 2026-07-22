@@ -1,0 +1,42 @@
+.cs-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f5f0;
+  padding: 2rem;
+}
+.cs-card {
+  text-align: center;
+  max-width: 420px;
+}
+.cs-icon {
+  margin-bottom: 1.5rem;
+  color: #E86A33;
+}
+.cs-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 1rem;
+}
+.cs-text {
+  font-size: 1.125rem;
+  color: #888;
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+.cs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 100px;
+  background: #E86A33;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: opacity 0.2s;
+}
+.cs-btn:hover { opacity: 0.85; }

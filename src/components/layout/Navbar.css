@@ -35,8 +35,9 @@
 }
 
 .logo-mark {
-  width: 32px;
-  height: 32px;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
 }
 
 .logo-text {

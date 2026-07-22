@@ -17,43 +17,42 @@ const processSteps = [
   {
     step: "01",
     title: "Discovery",
-    description:
-      "We begin by understanding your vision, needs, site conditions, and project requirements through in-depth consultation.",
+    description:"Understanding client aspirations, site conditions, budget, and project requirements comprehensively.",
     icon: Search,
   },
   {
     step: "02",
     title: "Concept Design",
     description:
-      "Our team develops initial design concepts, mood boards, and schematic layouts that capture the essence of your vision.",
+      "Transforming ideas into innovative concepts through creative planning and spatial exploration.",
     icon: PencilRuler,
   },
   {
     step: "03",
     title: "Design Development",
     description:
-      "We refine the chosen concept into detailed designs, including material selection, technical drawings, and 3D visualizations.",
+      "Refining layouts, materials, details, and systems for coordinated design excellence throughout.",
     icon: Blocks,
   },
   {
     step: "04",
     title: "Documentation",
     description:
-      "Comprehensive construction documents, specifications, and permit drawings are prepared for regulatory approvals.",
+      "Preparing precise technical drawings, specifications, and approvals for seamless project execution.",  
     icon: FileText,
   },
   {
     step: "05",
     title: "Construction",
     description:
-      "We oversee construction to ensure the design intent is faithfully executed, managing quality, timeline, and budget.",
+      "Coordinating construction activities, ensuring quality, accuracy, and design intent during execution.",
     icon: HardHat,
   },
   {
     step: "06",
     title: "Delivery",
     description:
-      "The project is handed over with all systems tested, documentation complete, and your satisfaction guaranteed.",
+      "Delivering completed spaces with exceptional quality, functionality, and lasting client satisfaction always.",
     icon: KeyRound,
   },
 ];

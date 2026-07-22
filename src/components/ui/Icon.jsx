@@ -6,7 +6,6 @@ export default function Icon({ name, size = 20, className = '' }) {
   const o = { width: size, height: size, viewBox: '0 0 24 24', fill: 'none', className, 'aria-hidden': 'true' };
 
   const icons = {
-    'logo-mark': <svg {...o}><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill={P} /></svg>,
     star: <svg {...o}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26" fill={P} /></svg>,
     'star-filled': <svg {...o}><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill={P} /></svg>,
     'arrow-right': <svg {...o} stroke={P} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>,
