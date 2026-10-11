@@ -74,11 +74,6 @@ export default function About() {
       <section className="about-hero">
         <div className="container">
           <SectionTitle
-            subtitle={
-              <span style={{color:"#fffafa"}}>
-                "About Us"
-              </span>
-            }
             title={
               <span className="about-hero-title">
                 Crafting Extraordinary Spaces in Nagpur
@@ -86,7 +81,7 @@ export default function About() {
             }
             description={
               <span style={{color:" #fffff0"}}>
-                "We are a collective of architects, designers, and thinkers dedicated to creating spaces that inspire, endure, and elevate the human experience."
+                We are a collective of architects, designers, and thinkers dedicated to creating spaces that inspire, endure, and elevate the human experience.
               </span>
             }
           />
@@ -189,7 +184,6 @@ export default function About() {
       <section className="section section--light">
         <div className="container">
           <SectionTitle
-            subtitle="Our Values"
             title="What We Stand For"
           />
 
@@ -219,7 +213,6 @@ export default function About() {
       <section className="section">
         <div className="container">
           <SectionTitle
-            subtitle="Our Team"
             title="Meet the People Behind the Studio"
             description="Our diverse team of creative professionals brings together expertise from across the design spectrum."
           />
@@ -239,7 +232,6 @@ export default function About() {
       <section className="section section--dark">
         <div className="container">
           <SectionTitle
-            subtitle="Professional Credentials"
             title="Certifications & Licenses"
             description="Professional registrations held by our architects."
           />

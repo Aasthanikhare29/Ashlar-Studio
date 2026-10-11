@@ -65,20 +65,13 @@ export default function Services() {
       <section className="services-hero">
         <div className="container">
           <SectionTitle
-            subtitle={
-              <span style={{color:"#FFFAFA"}}>
-                "Our Expertise"
-              </span>
-            }
             title={
               <span className="services-hero-title">
                 Comprehensive Design Services
               </span>
             }
             description={
-              <span style={{color:"#FFFFF0 "}}>
-                "From architecture to turnkey solutions, we offer end-to-end design services tailored to your unique vision and requirements."
-              </span>
+              <span style={{color:"#FFFFF0 "}}>From architecture to turnkey solutions, we offer end-to-end design services tailored to your unique vision and requirements.</span>
             }
           />
         </div>
@@ -101,7 +94,6 @@ export default function Services() {
       <section className="section section--light process-section">
         <div className="container">
           <SectionTitle
-            subtitle="Our Process"
             title="How We Work"
             description="Our proven design process ensures every project is delivered with excellence, from initial concept to final completion."
           />
@@ -162,7 +154,6 @@ export default function Services() {
       <section className="section">
         <div className="container">
           <SectionTitle
-            subtitle="Industries"
             title="Sectors We Serve"
             description="Our expertise spans across diverse industry sectors, delivering tailored solutions for each."
           />
@@ -184,7 +175,6 @@ export default function Services() {
       <section className="section section--light">
         <div className="container">
           <SectionTitle
-            subtitle="FAQ"
             title="Questions Clients Ask Us"
             description="Straight answers on process, timelines, fees and scope before you start a project with Ashlar Studio."
           />

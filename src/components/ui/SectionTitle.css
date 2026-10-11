@@ -9,18 +9,7 @@
 }
 .section-title--center { text-align: center; margin-left: auto; margin-right: auto; }
 .section-title--left { text-align: left; }
-.section-title--light { color: #fff; }
-.section-title-subtitle {
-  display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #E86A33;
-  margin-bottom: 0.75rem;
-}
-.section-title--light .section-title-subtitle { color: #E86A33; }
-.section-title-text {
+.section-title--light { color: #fff; }.section-title-text {
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;

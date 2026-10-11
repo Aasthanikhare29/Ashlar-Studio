@@ -24,9 +24,9 @@ export default function Careers() {
     <div className="page-wrapper">
       <section className="careers-hero">
         <div className="container">
-          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Join Us" </span>}
-          title={<span style={{color:"#fff"}}>"Build Your Career at Ashlar Studio" </span>}
-          description={<span style={{color:"#fffff0"}}>"We're looking for passionate individuals who share our commitment to design excellence and innovation."</span>}
+          <SectionTitle
+          title={<span style={{color:"#fff"}}>Build Your Career at Ashlar Studio</span>}
+          description={<span style={{color:"#fffff0"}}>We're looking for passionate individuals who share our commitment to design excellence and innovation.</span>}
           />
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function Careers() {
 
       <section className="section section--light">
         <div className="container">
-          <SectionTitle subtitle="FAQ" title="Frequently Asked Questions" description="Have questions about working at Ashlar Studio? Find answers below." />
+          <SectionTitle title="Frequently Asked Questions" description="Have questions about working at Ashlar Studio? Find answers below." />
           <div style={{ maxWidth: '720px', margin: '0 auto' }}>
             <FAQAccordion items={faqItems} />
           </div>

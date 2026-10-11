@@ -49,7 +49,7 @@ export default function Legal() {
     <div className="page-wrapper">
       <section className="legal-hero">
         <div className="container">
-          <SectionTitle subtitle="Legal" title={data.title} />
+          <SectionTitle title={data.title} />
         </div>
       </section>
 

@@ -27,11 +27,15 @@ export default function CaseStudyDetail() {
     <div className="page-wrapper">
       <section className="casestudy-hero">
         <div className="container">
-          <Link to="/case-studies" className="casestudy-back"><Icon name="chevron-left" size={14} /> Back to Case Studies</Link>
-          <span className="casestudy-category">{cs.category}</span>
+          <nav className="casestudy-breadcrumb" aria-label="Breadcrumb">
+            <Link to="/">Home</Link><span>/</span>
+            <Link to="/case-studies">Case Studies</Link><span>/</span>
+            <span aria-current="page">{cs.title.split(':')[0]}</span>
+          </nav>
           <h1 className="casestudy-title">{cs.title}</h1>
           <p className="casestudy-excerpt">{cs.excerpt}</p>
           <div className="casestudy-stats">
+            <div><span>Category</span>{cs.category}</div>
             <div><span>Client</span>{cs.client}</div>
             <div><span>Location</span>{cs.location}</div>
             <div><span>Year</span>{cs.year}</div>

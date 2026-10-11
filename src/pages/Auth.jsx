@@ -10,7 +10,7 @@ export default function Auth() {
     <div className="page-wrapper">
       <section className="auth-hero">
         <div className="container">
-          <SectionTitle subtitle="Account" title={isLogin ? 'Welcome Back' : 'Create Account'} description={isLogin ? 'Sign in to access your projects, consultations, and saved designs.' : 'Join Ashlar Studio to manage your projects and consultations.'} />
+          <SectionTitle title={isLogin ? 'Welcome Back' : 'Create Account'} description={isLogin ? 'Sign in to access your projects, consultations, and saved designs.' : 'Join Ashlar Studio to manage your projects and consultations.'} />
         </div>
       </section>
 

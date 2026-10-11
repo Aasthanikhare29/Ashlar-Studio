@@ -11,9 +11,9 @@ export default function Blog() {
     <div className="page-wrapper">
       <section className="blog-hero">
         <div className="container">
-          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Our Blog"</span>} 
-          title={<span style={{color:"#fff"}}>"Design Insights & Inspiration"</span>} 
-          description={<span style={{color:"#fffff0"}}>"Thoughts on architecture, interior design, sustainability, and the creative process from our team." </span>}
+          <SectionTitle 
+          title={<span style={{color:"#fff"}}>Design Insights & Inspiration</span>} 
+          description={<span style={{color:"#fffff0"}}>Thoughts on architecture, interior design, sustainability, and the creative process from our team.</span>}
           />
         </div>
       </section>

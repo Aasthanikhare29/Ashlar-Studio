@@ -15,9 +15,9 @@ export default function Contact() {
     <div className="page-wrapper">
       <section className="contact-hero">
         <div className="container">
-          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Get in Touch" </span>}
-          title={<span style={{color:"#fff"}}>"Let's Start a Conversation" </span>}
-          description={<span style={{color:"#fffff0"}}>"Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life."</span>}
+          <SectionTitle
+          title={<span style={{color:"#fff"}}>Let's Start a Conversation</span>}
+          description={<span style={{color:"#fffff0"}}>Have a project in mind? We'd love to hear about it. Reach out and let's discuss how we can bring your vision to life.</span>}
            />
         </div>
       </section>

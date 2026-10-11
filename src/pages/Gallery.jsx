@@ -25,9 +25,9 @@ export default function Gallery() {
     <div className="page-wrapper">
       <section className="gallery-hero">
         <div className="container">
-          <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Gallery" </span>}
-          title={<span style={{color:"#fff"}}>"Project Gallery" </span>}
-          description={<span style={{color:"#fffff0"}}>"Design renders and walkthrough stills from our residential and hospitality projects in Nagpur."</span>}
+          <SectionTitle
+          title={<span style={{color:"#fff"}}>Project Gallery</span>}
+          description={<span style={{color:"#fffff0"}}>Design renders and walkthrough stills from our residential and hospitality projects in Nagpur.</span>}
            />
         </div>
       </section>

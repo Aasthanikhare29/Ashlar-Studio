@@ -142,7 +142,6 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <SectionTitle
-            subtitle="What We Do"
             title="Our Core Services"
             description="From concept to completion, we offer comprehensive design services tailored to your vision."
           />
@@ -163,7 +162,6 @@ export default function Home() {
       <section className="section section--dark">
         <div className="container">
           <SectionTitle
-            subtitle="Our Work"
             title="Featured Projects"
             description="Explore a selection of our finest projects that showcase our expertise and creativity."
           />
@@ -185,7 +183,6 @@ export default function Home() {
 <section className="section">
   <div className="container">
     <SectionTitle
-      subtitle="Testimonials"
       title="What Our Clients Say"
       description="Hear from the people and organizations we've had the privilege to work with."
     />
@@ -231,7 +228,6 @@ export default function Home() {
       <section className="section section--light">
         <div className="container">
           <SectionTitle
-            subtitle="Latest Insights"
             title="From Our Blog"
             description="Stay updated with our latest thoughts on design, architecture, and the built environment."
           />
