@@ -68,7 +68,13 @@ export default function Footer() {
 
       <div className="footer-bottom container-wide">
         <div className="footer-bottom-inner">
-          <p>&copy; {currentYear} Ashlar Studio. All rights reserved.</p>
+          <div>
+            <p>&copy; {currentYear} Ashlar Studio. All rights reserved.</p>
+            <p className="footer-credit">
+              Handcrafted by humans of{' '}
+              <a href="https://timewheel.co.in/website-design-company-in-nagpur" target="_blank" rel="noopener">Timewheel Internet</a>
+            </p>
+          </div>
           <div className="footer-legal">
             <Link to="/privacy">Privacy Policy</Link>
             <Link to="/terms">Terms of Service</Link>
