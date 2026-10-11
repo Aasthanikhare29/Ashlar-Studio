@@ -49,7 +49,7 @@ export default function ProjectCard({ project, index = 0 }) {
         <div className="project-card-meta">
           <span className="project-card-category">{project.category}</span>
           <span className="project-card-location">
-            <Icon name="location" size={12} /> {project.location}
+            {project.location && <><Icon name="location" size={12} /> {project.location}</>}
           </span>
         </div>
         <h3 className="project-card-title">

@@ -34,7 +34,7 @@ export default function Contact() {
                   <div className="contact-info-icon"><Icon name="location" size={20} /></div>
                   <div>
                     <h4>Studio Address</h4>
-                    <p>42 Design District, Andheri East<br />Mumbai, Maharashtra 400093<br />India</p>
+                    <p>[Empty Value]<br />Nagpur, Maharashtra [Empty Value]<br />India</p>
                   </div>
                 </div>
                 <div className="contact-info-item">

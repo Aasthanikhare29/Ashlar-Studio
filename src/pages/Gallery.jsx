@@ -2,29 +2,22 @@ import { useState } from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
 import ImageLightbox from '../components/ui/ImageLightbox';
 import CTA from '../components/ui/CTA';
+import { projects } from '../data/projects';
 import './Gallery.css';
 
-const galleryImages = [
-  'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
-  'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80',
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80',
-  'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=600&q=80',
-  'https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=600&q=80',
-  'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&q=80',
-  'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
-  'https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&q=80',
-  'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&q=80',
-  'https://images.unsplash.com/photo-1464146072230-91cabc968266?w=600&q=80',
-];
+const allImages = projects.flatMap((p) =>
+  p.images.map((src, i) => ({ src, category: p.category, alt: `${p.title}${p.location ? `, ${p.location}` : ''} – view ${i + 1}` })),
+);
 
-const categories = ['All', 'Architecture', 'Interior', 'Landscape', 'Urban'];
+const categories = ['All', ...new Set(projects.map((p) => p.category))];
 
 export default function Gallery() {
   const [activeCat, setActiveCat] = useState('All');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const galleryImages = allImages.filter((img) => activeCat === 'All' || img.category === activeCat);
+  const lightboxImages = galleryImages.map((img) => img.src);
 
   const openLightbox = (i) => { setLightboxIndex(i); setLightboxOpen(true); };
 
@@ -34,7 +27,7 @@ export default function Gallery() {
         <div className="container">
           <SectionTitle subtitle={<span style={{color:"#fffafa"}}>"Gallery" </span>}
           title={<span style={{color:"#fff"}}>"Project Gallery" </span>}
-          description={<span style={{color:"#fffff0"}}>"A visual journey through our portfolio of completed projects across sectors."</span>}
+          description={<span style={{color:"#fffff0"}}>"Design renders and walkthrough stills from our residential and hospitality projects in Nagpur."</span>}
            />
         </div>
       </section>
@@ -43,7 +36,7 @@ export default function Gallery() {
         <div className="container">
           <div className="gallery-filters">
             {categories.map((cat) => (
-              <button key={cat} className={`gallery-filter ${activeCat === cat ? 'active' : ''}`} onClick={() => setActiveCat(cat)}>
+              <button key={cat} className={`gallery-filter ${activeCat === cat ? 'active' : ''}`} onClick={() => { setActiveCat(cat); setLightboxOpen(false); }}>
                 {cat}
               </button>
             ))}
@@ -51,7 +44,7 @@ export default function Gallery() {
           <div className="gallery-grid">
             {galleryImages.map((img, i) => (
               <div key={i} className="gallery-item" onClick={() => openLightbox(i)}>
-                <img src={img} alt={`Gallery ${i + 1}`} loading="lazy" />
+                <img src={img.src} alt={img.alt} loading="lazy" />
               </div>
             ))}
           </div>
@@ -64,7 +57,7 @@ export default function Gallery() {
 
       {lightboxOpen && (
         <ImageLightbox
-          images={galleryImages}
+          images={lightboxImages}
           current={lightboxIndex}
           onClose={() => setLightboxOpen(false)}
           onPrev={() => setLightboxIndex((i) => (i === 0 ? galleryImages.length - 1 : i - 1))}

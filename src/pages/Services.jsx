@@ -10,6 +10,8 @@ import {
 import SectionTitle from "../components/ui/SectionTitle";
 import ServiceCard from "../components/ui/ServiceCard";
 import CTA from "../components/ui/CTA";
+import FAQAccordion from "../components/ui/FAQAccordion";
+import { faqs } from "../data/faqs";
 import { services, industries } from "../data/services";
 import "./Services.css";
 
@@ -176,6 +178,17 @@ export default function Services() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section section--light">
+        <div className="container">
+          <SectionTitle
+            subtitle="FAQ"
+            title="Questions Clients Ask Us"
+            description="Straight answers on process, timelines, fees and scope before you start a project with Ashlar Studio."
+          />
+          <FAQAccordion items={faqs} />
         </div>
       </section>
 

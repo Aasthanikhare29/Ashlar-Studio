@@ -13,7 +13,7 @@ export const teamMembers = [
       'For me, design is not about creating impressive buildings alone. It is about solving problems, enriching experiences, and shaping environments that continue to serve people for years to come.',
     ],
     expertise: ['Architecture', 'Urban Planning', 'Infrastructure Development', 'Research & Technology', 'Sustainable Design'],
-    social: { linkedin: '#', twitter: '#', instagram: '#', facebook: '#' },
+    social: {}, // add real profile URLs (also feeds schema sameAs)
     education: 'M.Arch Urban Planning',
     experience: '15+ years',
     accentColor: '#E86A33',
@@ -31,7 +31,7 @@ export const teamMembers = [
       'My approach to design is based on a simple belief: Good architecture should improve the way people live, work, and experience a space. Every project begins with understanding the client\'s lifestyle, business needs, budget, and the site\'s unique characteristics. Rather than following trends, I focus on creating timeless, functional, and sustainable designs that remain relevant for years.',
     ],
     expertise: ['Interior Design', 'Residential Architecture', 'Commercial Design', 'Hospitality Projects', 'Urban Development'],
-    social: { linkedin: '#', twitter: '#', instagram: '#', facebook: '#' },
+    social: {}, // add real profile URLs (also feeds schema sameAs)
     education: 'B.Arch Urban Planning',
     experience: '12+ years',
     accentColor: '#138ab8',
@@ -47,7 +47,7 @@ export const teamMembers = [
       'Vikram leads our interior design team with a passion for creating spaces that blend luxury with functionality.',
     ],
     expertise: ['Interior Design', 'Space Planning', 'Furniture Design', 'Lighting Design'],
-    social: { linkedin: '#', twitter: '#', instagram: '#', facebook: '#' },
+    social: {}, // add real profile URLs (also feeds schema sameAs)
     education: 'NID Ahmedabad',
     experience: '12+ years',
   },

@@ -1,7 +1,9 @@
 
 import { useParams, Link } from "react-router-dom";
 import { blogPosts } from "../data/blog";
+import { blogBodies } from "../data/blogBodies";
 import CTA from "../components/ui/CTA";
+import { teamMembers } from "../data/team";
 import "./BlogDetail.css";
 
 import {
@@ -94,7 +96,7 @@ export default function BlogDetail() {
                   {post.category}
                 </span>
 
-                <span>{post.date}</span>
+                <time dateTime={post.date}>{post.date}</time>
                 <span>{post.readTime}</span>
               </div>
 
@@ -111,7 +113,11 @@ export default function BlogDetail() {
                 />
 
                 <div>
-                  <strong>{post.author}</strong>
+                  <strong>
+                    {teamMembers.find((m) => m.name === post.author) ? (
+                      <Link to={`/team/${teamMembers.find((m) => m.name === post.author).slug}`}>{post.author}</Link>
+                    ) : post.author}
+                  </strong>
                   <span>{post.authorRole}</span>
                 </div>
               </div>
@@ -148,161 +154,25 @@ export default function BlogDetail() {
               <h3>{post.author}</h3>
 
               <p>
-                {post.authorRole} at Ashlar Studio, specialising in sustainable
-                architecture, thoughtful spatial planning and timeless design.
+                {post.authorRole} at Ashlar Studio.{" "}
+                {teamMembers.find((m) => m.name === post.author)?.bio}
               </p>
             </div>
           </section>
 
           <div className="blog-detail-body">
-            <p>{post.content}</p>
-
-            <p>
-              Sustainable architecture is becoming an essential part of modern
-              design. It focuses on creating spaces that reduce environmental
-              impact while improving comfort, functionality and long-term
-              performance.
-            </p>
-
-            <p>
-              Architects today are exploring better construction techniques,
-              renewable materials and intelligent energy systems to create
-              buildings that respond thoughtfully to people and their
-              surroundings.
-            </p>
-
-            {/* First article image */}
-            <figure className="blog-detail-article-image">
-              <img
-                src={post.image}
-                alt={post.title}
-                loading="lazy"
-              />
-
-              <figcaption>
-                Thoughtful design connects architecture with its surrounding
-                environment.
-              </figcaption>
-            </figure>
-
-            <p>
-              Material selection plays an important role in sustainable
-              construction. Architects must consider durability, maintenance,
-              availability and the environmental impact of each material.
-            </p>
-
-            <p>
-              Sustainable architecture brings environmental responsibility,
-              functionality and long-term value together. Each decision should
-              support both the people using the building and the environment
-              surrounding it.
-            </p>
-
-            <p>
-              Architects can achieve this through thoughtful planning, passive
-              design techniques, durable materials and efficient building
-              systems.
-            </p>
-
-            {/* Table */}
-            <div className="blog-detail-table-wrapper">
-              <table className="blog-detail-table">
-                <thead>
-                  <tr>
-                    <th>Material</th>
-                    <th>Durability</th>
-                    <th>Maintenance</th>
-                    <th>Sustainability</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <td>Bamboo</td>
-                    <td>High</td>
-                    <td>Low</td>
-                    <td>Excellent</td>
-                  </tr>
-
-                  <tr>
-                    <td>Recycled Steel</td>
-                    <td>Very High</td>
-                    <td>Low</td>
-                    <td>Very Good</td>
-                  </tr>
-
-                  <tr>
-                    <td>Engineered Wood</td>
-                    <td>Medium</td>
-                    <td>Medium</td>
-                    <td>Very Good</td>
-                  </tr>
-
-                  <tr>
-                    <td>Natural Stone</td>
-                    <td>Excellent</td>
-                    <td>Low</td>
-                    <td>Good</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p>
-              Sustainable materials can reduce waste, lower energy consumption
-              and increase the useful life of a building. The best choice
-              depends on the climate, project requirements and local
-              availability.
-            </p>
-
-            <p>
-              Local materials can also reduce transportation emissions while
-              helping the building feel more connected to its location and
-              cultural context.
-            </p>
-
-            <p>
-              The most successful sustainable buildings balance environmental
-              performance with comfort, beauty and practical everyday use.
-            </p>
-
-            {/* Standalone quote */}
-            <blockquote className="blog-detail-quote">
-              <p>
-                Architecture is the thoughtful making of space. Every project
-                should inspire, connect people and stand the test of time.
-              </p>
-
-              <cite>— {post.author}</cite>
-            </blockquote>
-
-            <p>
-              A sustainable building should not only perform efficiently but
-              should also create a meaningful experience for the people using
-              it. Natural light, ventilation and thoughtful spatial planning
-              all contribute to healthier and more comfortable environments.
-            </p>
-
-            <p>
-              The future of architecture lies in balancing environmental
-              responsibility with beauty, durability and human-centred design.
-              This approach allows buildings to remain valuable and relevant
-              for generations.
-            </p>
-
-            {/* Second article image */}
-            <figure className="blog-detail-article-image">
-              <img
-                src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1200&q=85"
-                alt="Contemporary sustainable building exterior"
-                loading="lazy"
-              />
-
-              <figcaption>
-                Sustainable architecture combines performance, beauty and
-                long-term value.
-              </figcaption>
-            </figure>
+            {(blogBodies[post.slug] || [{ type: "p", text: post.content }]).map((b, i) => {
+              if (b.type === "h2") return <h2 key={i}>{b.text}</h2>;
+              if (b.type === "ul") return <ul key={i}>{b.items.map((li) => <li key={li}>{li}</li>)}</ul>;
+              if (b.type === "quote")
+                return (
+                  <blockquote key={i} className="blog-detail-quote">
+                    <p>{b.text}</p>
+                    <cite>— {post.author}</cite>
+                  </blockquote>
+                );
+              return <p key={i}>{b.text}</p>;
+            })}
           </div>
 
           {/* Author card */}
@@ -322,8 +192,8 @@ export default function BlogDetail() {
               <h3>{post.author}</h3>
 
               <p>
-                {post.authorRole} at Ashlar Studio, specialising in sustainable
-                architecture, thoughtful spatial planning and timeless design.
+                {post.authorRole} at Ashlar Studio.{" "}
+                {teamMembers.find((m) => m.name === post.author)?.bio}
               </p>
             </div>
           </section>

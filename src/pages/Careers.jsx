@@ -4,12 +4,12 @@ import CTA from '../components/ui/CTA';
 import './Careers.css';
 
 const openPositions = [
-  { title: 'Senior Architect', type: 'Full-time', location: 'Mumbai', department: 'Architecture' },
-  { title: 'Interior Designer', type: 'Full-time', location: 'Mumbai', department: 'Interior Design' },
-  { title: 'Landscape Architect', type: 'Full-time', location: 'Mumbai', department: 'Landscape' },
-  { title: '3D Visualizer', type: 'Full-time', location: 'Mumbai', department: 'Visualization' },
-  { title: 'Project Manager', type: 'Full-time', location: 'Mumbai', department: 'Management' },
-  { title: 'Junior Architect', type: 'Full-time', location: 'Mumbai', department: 'Architecture' },
+  { title: 'Senior Architect', type: 'Full-time', location: 'Nagpur', department: 'Architecture' },
+  { title: 'Interior Designer', type: 'Full-time', location: 'Nagpur', department: 'Interior Design' },
+  { title: 'Landscape Architect', type: 'Full-time', location: 'Nagpur', department: 'Landscape' },
+  { title: '3D Visualizer', type: 'Full-time', location: 'Nagpur', department: 'Visualization' },
+  { title: 'Project Manager', type: 'Full-time', location: 'Nagpur', department: 'Management' },
+  { title: 'Junior Architect', type: 'Full-time', location: 'Nagpur', department: 'Architecture' },
 ];
 
 const faqItems = [

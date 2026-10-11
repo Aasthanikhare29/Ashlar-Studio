@@ -42,7 +42,7 @@ export const faqs = [
   {
     id: 9,
     question: 'Do you offer international services?',
-    answer: 'Yes, we have completed projects across six continents. Our team has extensive experience navigating international building codes, working with local consultants, and managing remote project delivery.',
+    answer: 'Our studio is based in Nagpur and works on projects across Maharashtra and India. For projects outside India we collaborate with a local architect of record who handles permits and site supervision, while we lead design and coordinate remotely.',
   },
   {
     id: 10,

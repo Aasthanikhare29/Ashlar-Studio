@@ -71,7 +71,7 @@ const SearchBar = () => {
           <div className="search-bar__results">
             {results.map((project) => (
               <button key={project.id} className="search-bar__result" onClick={() => handleSelect(project.id)}>
-                <img src={project.thumbnail} alt={project.title} className="search-bar__result-img" />
+                <img src={project.image} alt={project.title} className="search-bar__result-img" />
                 <div>
                   <span className="search-bar__result-title">{project.title}</span>
                   <span className="search-bar__result-category">{project.category}</span>

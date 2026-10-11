@@ -111,7 +111,7 @@ export default function ProjectDetail() {
             <div className="pd-slider-track" style={{ transform: `translateX(-${activeImg * 100}%)` }}>
               {project.images.map((img, i) => (
                 <div key={i} className="pd-slider-slide">
-                  <img src={img} alt="" />
+                  <img src={img} alt={`${project.title} design render ${i + 1}`} />
                 </div>
               ))}
             </div>
@@ -131,7 +131,7 @@ export default function ProjectDetail() {
           <div className="pd-slider-strip">
             {project.images.map((img, i) => (
               <button key={i} className={`pd-slider-strip-item ${i === activeImg ? 'active' : ''}`} onClick={() => setActiveImg(i)}>
-                <img src={img} alt="" />
+                <img src={img} alt={`${project.title} thumbnail ${i + 1}`} />
               </button>
             ))}
           </div>
@@ -157,20 +157,34 @@ export default function ProjectDetail() {
               <p>{project.details}</p>
             </div>
 
+            {project.video && (
+              <div className="pd-wecos-about">
+                <h2>3D Walkthrough</h2>
+                <video src={project.video} poster={project.image} controls preload="none" playsInline muted
+                  style={{ width: "100%", borderRadius: 12 }} aria-label={`${project.title} 3D walkthrough`} />
+              </div>
+            )}
+
             <div className="pd-wecos-meta">
               <div className="pd-wecos-meta-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>{project.location}</span>
+                {project.location && <><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>{project.location}</span></>}
                 <span className="pd-wecos-meta-status">{project.status}</span>
               </div>
-              <div className="pd-wecos-meta-row">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <span>{project.year}</span>
-              </div>
+              {project.year && (
+                <div className="pd-wecos-meta-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>{project.year}</span>
+                </div>
+              )}
               {project.award && (
                 <div className="pd-wecos-meta-row">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                   <span>{project.award}</span>
+                </div>
+              )}
+              {project.area && (
+                <div className="pd-wecos-meta-row">
+                  <span>Built-up area: {project.area}</span>
                 </div>
               )}
               {project.client && (
@@ -179,28 +193,11 @@ export default function ProjectDetail() {
                   <span>{project.client}</span>
                 </div>
               )}
-              <div className="pd-wecos-meta-trust">
-                <div><span>100%</span> Satisfaction</div>
-                <div><span>50+</span> Projects</div>
-                <div><span>5★</span> Rating</div>
-              </div>
             </div>
 
           </div>
 
           <aside className="pd-wecos-sidebar">
-            <div className="pd-wecos-card pd-wecos-card-rating">
-              <span className="pd-wecos-card-label">Rating</span>
-              <div className="pd-wecos-rating">
-                <span className="pd-wecos-rating-num">4.8<span className="pd-wecos-rating-outof">/5.0</span></span>
-                <div className="pd-wecos-rating-stars">
-                  {[1,2,3,4,5].map(i => (
-                    <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#2d8a4e"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                  ))}
-                </div>
-              </div>
-              <span className="pd-wecos-rating-count">Exceptional</span>
-            </div>
 
             {features.length > 0 && (
               <div className="pd-wecos-card">

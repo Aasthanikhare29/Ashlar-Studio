@@ -1,0 +1,37 @@
+# Ashlar Studio
+
+> Ashlar Studio (formerly SPK Buildwell) is an architecture, interior design and urban planning studio in Nagpur, Maharashtra, India. It is led by architect and urban planner Pranav Kadoo (Founder & Principal Architect) with Shivani Kadoo (Senior Architect). The studio designs residences, restaurants and commercial spaces in Nagpur, including Chinchbhawan, Shankarpur and Jafar Nagar.
+
+- City: Nagpur, Maharashtra, India
+- Phone: +91 77578 41518, +91 77989 28535
+- Email: hello@ashlarstudio.com
+- Hours: Mon–Fri 9:00–19:00, Sat 10:00–16:00 IST
+
+## Services
+- [All services](https://ashlar-studio.vercel.app/services): architecture, interior design, BIM, 3D visualization and walkthroughs, urban planning, sustainable design, renovation, turnkey solutions, land & building valuation. Includes an FAQ on process, timelines and fees.
+
+## Projects (Nagpur)
+- [Wankhede Residence, Chinchbhawan](https://ashlar-studio.vercel.app/projects/wankhede-residence): three-storey home with a jaali-screened facade frame
+- [Yogesh Dekate Residence, Shankarpur](https://ashlar-studio.vercel.app/projects/yogesh-dekate-residence): cantilevered frames with vertical fin cladding
+- [Dhoke Residence, Shankarpur](https://ashlar-studio.vercel.app/projects/dhoke-residence): narrow-plot home with a brick stair tower
+- [Thakre Residence, Chinchbhawan](https://ashlar-studio.vercel.app/projects/thakre-residence): four storeys, glazed living level, stilt parking
+- [Khan Residence, Jafar Nagar](https://ashlar-studio.vercel.app/projects/khan-residence): corner-plot home with terracotta-tone cladding
+- [Barange Residence](https://ashlar-studio.vercel.app/projects/barange-residence)
+- [Ravi Rathore Residence](https://ashlar-studio.vercel.app/projects/ravi-rathore-residence)
+- [Chimote Residence](https://ashlar-studio.vercel.app/projects/chimote-residence)
+- [El Dorado Garden Restaurant](https://ashlar-studio.vercel.app/projects/el-dorado-garden-restaurant): open-air restaurant with private timber booths, plus a 3D walkthrough video
+
+## Studio
+- [About](https://ashlar-studio.vercel.app/about)
+- [Pranav Kadoo](https://ashlar-studio.vercel.app/team/pranav-kadoo): Founder & Principal Architect
+- [Shivani Kadoo](https://ashlar-studio.vercel.app/team/shivani-kadoo): Senior Architect
+- [Case studies](https://ashlar-studio.vercel.app/case-studies)
+- [Contact](https://ashlar-studio.vercel.app/contact)
+
+## Articles
+- [The Future of Sustainable Architecture](https://ashlar-studio.vercel.app/blog/future-of-sustainable-architecture)
+- [Biophilic Design: Connecting People with Nature](https://ashlar-studio.vercel.app/blog/biophilic-design-benefits)
+- [Maximizing Small Spaces: Smart Design Strategies](https://ashlar-studio.vercel.app/blog/maximizing-small-spaces)
+- [Heritage Restoration: A Complete Guide](https://ashlar-studio.vercel.app/blog/heritage-restoration-guide)
+- [Lighting Design Essentials for Every Home](https://ashlar-studio.vercel.app/blog/lighting-design-essentials)
+- [Redefining Urban Spaces for Tomorrow's Cities](https://ashlar-studio.vercel.app/blog/future-of-urban-planning)

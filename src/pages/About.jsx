@@ -21,50 +21,14 @@ const certifications = [
   {
     title: "Council of Architecture (COA) Registration",
     organization: "Council of Architecture, India",
-    year: 2024,
-    status: "Certified",
+    year: "[Empty Value]",
+    status: "Reg. No. [Empty Value]",
   },
   {
-    title: "LEED AP BD+C",
-    organization: "Green Business Certification Inc.",
-    year: 2024,
-    status: "Accredited",
-  },
-  {
-    title: "NCARB Certification",
-    organization: "National Council of Architectural Registration Boards",
-    year: 2023,
-    status: "Certified",
-  },
-  {
-    title: "Professional Engineer (PE) License",
-    organization: "State Board of Professional Engineers",
-    year: 2023,
-    status: "Licensed",
-  },
-  {
-    title: "Chartered Engineer (CIE)",
-    organization: "Institution of Engineers, India",
-    year: 2022,
-    status: "Chartered",
-  },
-  {
-    title: "NCIDQ Certified",
-    organization: "National Council for Interior Design Qualification",
-    year: 2022,
-    status: "Certified",
-  },
-  {
-    title: "LEED AP ID+C",
-    organization: "Green Business Certification Inc.",
-    year: 2021,
-    status: "Accredited",
-  },
-  {
-    title: "IGBC Accredited Professional",
-    organization: "Indian Green Building Council",
-    year: 2021,
-    status: "Accredited",
+    title: "[Empty Value]",
+    organization: "[Empty Value]",
+    year: "[Empty Value]",
+    status: "[Empty Value]",
   },
 ];
 
@@ -117,7 +81,7 @@ export default function About() {
             }
             title={
               <span className="about-hero-title">
-                Crafting Extraordinary Spaces Since 2010
+                Crafting Extraordinary Spaces in Nagpur
               </span>
             }
             description={
@@ -277,7 +241,7 @@ export default function About() {
           <SectionTitle
             subtitle="Professional Credentials"
             title="Certifications & Licenses"
-            description="Our team holds key certifications and professional licenses across architecture, civil engineering, and interior design."
+            description="Professional registrations held by our architects."
           />
 
           <div className="awards-grid">

@@ -16,15 +16,15 @@ import './Home.css';
 const heroSlides = [
   {
     image:
-      'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1800&q=85',
+      '/projects/thakre-residence/1.webp',
    },
   {
     image:
-      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85',
+      '/projects/khan-residence/1.webp',
    },
   {
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85',
+      '/projects/ravi-rathore-residence/2.webp',
   },
 ];
 
@@ -126,9 +126,9 @@ export default function Home() {
 </h1>
 
 <p className={`hero-desc ${heroVisible ? 'animate' : ''}`}>
-  Ashlar Studio is a premier architecture and design firm crafting
-  extraordinary spaces that blend innovation, sustainability and
-  timeless elegance.
+  Ashlar Studio is an architecture and interior design studio in
+  Nagpur, designing homes, restaurants and workplaces that balance
+  climate-responsive planning with timeless detailing.
 </p>
 
             <div className={`hero-actions ${heroVisible ? 'animate' : ''}`}>
@@ -199,12 +199,6 @@ export default function Home() {
         />
       ))}
     </div>
-
-    <div style={{ textAlign: "center", marginTop: "2rem" }}>
-      <Link to="/testimonials" className="btn btn-primary btn-lg">
-        View All Testimonials
-      </Link>
-    </div>
   </div>
 </section>
 
@@ -212,7 +206,7 @@ export default function Home() {
   <div className="container">
     <div className="stats-grid">
       <div className="stat-card">
-        <AnimatedCounter end={200} suffix="+" start={statsVisible} />
+        <span className="stat-number">[Empty Value]</span>
         <p>Projects Completed</p>
       </div>
 
@@ -222,12 +216,12 @@ export default function Home() {
       </div>
 
       <div className="stat-card">
-        <AnimatedCounter end={50} suffix="+" start={statsVisible} />
-        <p>SQ. Feet Design</p>
+        <span className="stat-number">[Empty Value]</span>
+        <p>Sq. Ft. Designed</p>
       </div>
 
       <div className="stat-card">
-        <AnimatedCounter end={98} suffix="%" start={statsVisible} />
+        <span className="stat-number">[Empty Value]</span>
         <p>Client Satisfaction</p>
       </div>
     </div>

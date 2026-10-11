@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
@@ -21,16 +21,23 @@ import NotFound from './pages/NotFound';
 import Legal from './pages/Legal';
 import Auth from './pages/Auth';
 import ComingSoon from './pages/ComingSoon';
+import { getSeo } from './seo';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Prerendered HTML carries full head tags; this keeps title/description right on client-side navigation
+    const seo = getSeo(pathname);
+    document.title = seo.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', seo.description);
+  }, [pathname]);
   return null;
 }
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -57,6 +64,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
