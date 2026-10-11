@@ -4,11 +4,11 @@
 //   SMTP_HOST (default smtp.hostinger.com), SMTP_PORT (default 465)
 //   LEAD_EMAILS                     comma-separated recipients (defaults below)
 import nodemailer from 'nodemailer';
+import { leadEmailHtml } from './_lead-email.js';
 
 const DEFAULT_RECIPIENTS = 'academy.ashlar@gmail.com,ar.pranavkadoo@gmail.com,nagpureshivani3@gmail.com';
 const MIN_FILL_MS = 3000; // bots submit instantly
 
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const clean = (v, max) => String(v ?? '').trim().slice(0, max);
 
 export default async function handler(req, res) {
@@ -57,8 +57,7 @@ export default async function handler(req, res) {
       replyTo: `"${name.replace(/"/g, '')}" <${email}>`,
       subject: `New enquiry: ${name}${service ? ` – ${service}` : ''}`,
       text: `${rows.map(([k, v]) => `${k}: ${v}`).join('\n')}\n\nMessage:\n${message}`,
-      html: `<table cellpadding="6">${rows.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`).join('')}</table>
-<p><b>Message</b></p><p style="white-space:pre-wrap">${esc(message)}</p>`,
+      html: leadEmailHtml({ name, email, phone, service, message }),
     });
     return res.status(200).json({ ok: true });
   } catch (err) {
