@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { serviceDetails } from '../data/serviceDetails';
+import { services } from '../data/services';
 import { projects } from '../data/projects';
 import ProjectCard from '../components/ui/ProjectCard';
 import FAQAccordion from '../components/ui/FAQAccordion';
@@ -11,6 +12,7 @@ export default function ServiceDetail() {
   const { id } = useParams();
   const s = serviceDetails[id];
   if (!s) return <ComingSoon />;
+  const title = services.find((x) => x.id === id).title;
 
   const related = s.projectSlugs.map((slug) => projects.find((p) => p.slug === slug)).filter(Boolean);
 
@@ -22,9 +24,8 @@ export default function ServiceDetail() {
             <nav className="sd-breadcrumb" aria-label="Breadcrumb">
               <Link to="/">Home</Link><span>/</span>
               <Link to="/services">Services</Link><span>/</span>
-              <span aria-current="page">{s.eyebrow.split(' · ')[0]}</span>
+              <span aria-current="page">{title}</span>
             </nav>
-            <span className="sd-eyebrow">{s.eyebrow}</span>
             <h1>{s.h1}</h1>
             <p className="sd-answer">{s.answer}</p>
             <div className="sd-hero-actions">

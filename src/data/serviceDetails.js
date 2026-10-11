@@ -5,7 +5,6 @@ export const serviceDetails = {
     slug: 'architecture',
     metaTitle: 'Architects in Nagpur | Residential & Commercial Architecture | Ashlar Studio',
     metaDescription: 'Ashlar Studio is an architecture firm in Nagpur designing bungalows, G+2 homes and commercial buildings, from concept and NMC/NMRDA approval drawings to site supervision.',
-    eyebrow: 'Architecture · Nagpur',
     h1: 'Architects in Nagpur for Homes, Bungalows & Commercial Buildings',
     answer: 'Ashlar Studio is an architecture practice in Nagpur that designs independent bungalows, G+2 and G+3 family homes and commercial buildings. We handle the full process: site study, concept design, 3D facade visualisation, approval drawings for NMC or NMRDA, working drawings and site supervision until handover.',
     heroImage: '/projects/wankhede-residence/1.webp',
