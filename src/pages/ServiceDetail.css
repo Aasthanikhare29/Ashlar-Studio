@@ -1,12 +1,13 @@
-.sd-hero { padding: 7rem 0 3rem; }
+.sd-hero { padding: 6rem 0 2.5rem; }
 .sd-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; }
-.sd-breadcrumb { display: flex; gap: 0.5rem; font-size: 0.85rem; color: var(--text-light); margin-bottom: 1.5rem; }
+.sd-breadcrumb { display: flex; gap: 0.5rem; font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem; }
 .sd-breadcrumb a { text-decoration: none; }
 .sd-breadcrumb a:hover { color: var(--primary); }
-.sd-hero h1 { font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.12; margin-bottom: 1.25rem; }
-.sd-answer { font-size: 1.1rem; color: var(--text-light); max-width: 38rem; margin-bottom: 2rem; }
+.sd-hero h1 { font-size: clamp(1.9rem, 3.2vw, 2.75rem); line-height: 1.12; margin-bottom: 1rem; }
+.sd-answer { font-size: 1.05rem; line-height: 1.6; color: var(--text-light); max-width: 38rem; margin-bottom: 1.75rem; }
 .sd-hero-actions { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
-.sd-hero-img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+/* Image never taller than the viewport, so the CTAs stay above the fold */
+.sd-hero-img { width: 100%; aspect-ratio: 4 / 5; max-height: calc(100vh - 9rem); object-fit: cover; border-radius: 6px; }
 .sd-link { color: var(--primary); font-weight: 600; text-decoration: none; }
 .sd-link:hover { text-decoration: underline; }
 
