@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { serviceDetails } from '../data/serviceDetails';
 import { services } from '../data/services';
+import { teamMembers } from '../data/team';
 import { projects } from '../data/projects';
 import ProjectCard from '../components/ui/ProjectCard';
 import FAQAccordion from '../components/ui/FAQAccordion';
@@ -13,6 +14,7 @@ export default function ServiceDetail() {
   const s = serviceDetails[id];
   if (!s) return <ComingSoon />;
   const title = services.find((x) => x.id === id).title;
+  const author = teamMembers.find((m) => m.slug === s.author);
 
   const related = s.projectSlugs.map((slug) => projects.find((p) => p.slug === slug)).filter(Boolean);
 
@@ -28,6 +30,11 @@ export default function ServiceDetail() {
             </nav>
             <h1>{s.h1}</h1>
             <p className="sd-answer">{s.answer}</p>
+            {author && (
+              <p className="sd-byline">
+                By <Link to={`/team/${author.slug}`}>{author.name}</Link>, {author.role} · Updated <time dateTime={s.updated}>{new Date(s.updated).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</time>
+              </p>
+            )}
             <div className="sd-hero-actions">
               <Link to="/book-consultation" className="btn btn-primary btn-lg">Book a Consultation</Link>
               <a href="#sd-work" className="sd-link">See our work ↓</a>

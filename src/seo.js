@@ -142,6 +142,12 @@ export function getSeo(path) {
     const d = serviceDetails[slug];
     const svc = services.find((x) => x.id === slug);
     seo = { title: d.metaTitle, description: d.metaDescription, image: SITE_URL + d.heroImage };
+    const a = teamMembers.find((m) => m.slug === d.author);
+    jsonLd.push({
+      '@context': 'https://schema.org', '@type': 'WebPage', url: SITE_URL + path, name: d.h1, dateModified: d.updated,
+      ...(a && { author: { '@id': `${SITE_URL}/team/${a.slug}#person`, name: a.name } }),
+      about: { '@type': 'Service', name: `${svc.title} in Nagpur` }, publisher: { '@id': ORG_ID },
+    });
     jsonLd.push(crumbs(['Services', '/services'], [svc.title, path]), {
       '@context': 'https://schema.org', '@type': 'Service', name: `${svc.title} in Nagpur`, serviceType: svc.title,
       description: d.answer, provider: { '@id': ORG_ID }, image: SITE_URL + d.heroImage,

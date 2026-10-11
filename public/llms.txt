@@ -10,6 +10,9 @@
 ## Services
 - [All services](https://ashlar-studio.vercel.app/services): architecture, interior design, BIM, 3D visualization and walkthroughs, urban planning, sustainable design, renovation, turnkey solutions, land & building valuation. Includes an FAQ on process, timelines and fees.
 
+## Service pages
+- [Architects in Nagpur](https://ashlar-studio.vercel.app/services/architecture): bungalows, G+2/G+3 homes and commercial buildings; NMC/NMRDA approval drawings, climate-responsive design, process, FAQs
+
 ## Projects (Nagpur)
 - [Wankhede Residence, Chinchbhawan](https://ashlar-studio.vercel.app/projects/wankhede-residence): three-storey home with a jaali-screened facade frame
 - [Yogesh Dekate Residence, Shankarpur](https://ashlar-studio.vercel.app/projects/yogesh-dekate-residence): cantilevered frames with vertical fin cladding
