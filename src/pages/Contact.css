@@ -97,3 +97,6 @@
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+.contact-error { color: #c0392b; font-size: 0.9rem; margin-bottom: 1rem; }
+.contact-form { position: relative; }

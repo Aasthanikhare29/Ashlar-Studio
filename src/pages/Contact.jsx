@@ -1,14 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { services } from '../data/services';
 import SectionTitle from '../components/ui/SectionTitle';
 import Icon from '../components/ui/Icon';
 import './Contact.css';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+  // Captcha "a + x = c": generated after mount so prerendered HTML and hydration agree
+  const [captcha, setCaptcha] = useState(null);
+  const [startedAt, setStartedAt] = useState(0);
 
-  const handleSubmit = (e) => {
+  const newCaptcha = () => {
+    const a = 1 + Math.floor(Math.random() * 12);
+    const x = 1 + Math.floor(Math.random() * 12);
+    setCaptcha({ a, c: a + x });
+  };
+  useEffect(() => { newCaptcha(); setStartedAt(Date.now()); }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError('');
+    setSending(true);
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, captchaA: captcha?.a, captchaC: captcha?.c, startedAt }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(out.error || 'Something went wrong. Please try again.');
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message);
+      newCaptcha();
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -73,36 +103,40 @@ export default function Contact() {
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="name">Full Name *</label>
-                      <input type="text" id="name" required placeholder="Your full name" />
+                      <input type="text" id="name" name="name" required maxLength={100} placeholder="Your full name" />
                     </div>
                     <div className="form-group">
                       <label htmlFor="email">Email Address *</label>
-                      <input type="email" id="email" required placeholder="your@email.com" />
+                      <input type="email" id="email" name="email" required maxLength={200} placeholder="your@email.com" />
                     </div>
                   </div>
                   <div className="form-group">
                     <label htmlFor="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="+91 98765 43210" />
+                    <input type="tel" id="phone" name="phone" maxLength={30} placeholder="+91 98765 43210" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="service">Service Interested In</label>
-                    <select id="service">
+                    <select id="service" name="service">
                       <option value="">Select a service</option>
-                      <option value="architecture">Architecture</option>
-                      <option value="interior">Interior Design</option>
-                      <option value="landscape">Landscape Design</option>
-                      <option value="visualization">3D Visualization</option>
-                      <option value="urban">Urban Planning</option>
-                      <option value="sustainable">Sustainable Design</option>
-                      <option value="renovation">Renovation</option>
-                      <option value="turnkey">Turnkey Solutions</option>
+                      {services.map((sv) => <option key={sv.id} value={sv.title}>{sv.title}</option>)}
                     </select>
                   </div>
                   <div className="form-group">
                     <label htmlFor="message">Message *</label>
-                    <textarea id="message" rows={5} required placeholder="Tell us about your project..." />
+                    <textarea id="message" name="message" rows={5} required maxLength={5000} placeholder="Tell us about your project..." />
                   </div>
-                  <button type="submit" className="btn btn-primary btn-lg">Send Message</button>
+                  {/* Honeypot: hidden from people, filled by bots */}
+                  <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px' }} />
+                  <div className="form-group">
+                    <label htmlFor="captchaAnswer">
+                      Quick check: if {captcha ? `${captcha.a} + x = ${captcha.c}` : '…'}, what is x? *
+                    </label>
+                    <input type="number" id="captchaAnswer" name="captchaAnswer" required inputMode="numeric" placeholder="x =" disabled={!captcha} />
+                  </div>
+                  {error && <p className="contact-error" role="alert">{error}</p>}
+                  <button type="submit" className="btn btn-primary btn-lg" disabled={sending || !captcha}>
+                    {sending ? 'Sending…' : 'Send Message'}
+                  </button>
                 </form>
               )}
             </div>
