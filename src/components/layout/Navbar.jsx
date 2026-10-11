@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { navLinks } from '../../data/navigation';
 import Icon from '../ui/Icon';
+import { BOOKING_URL } from '../../data/site';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -86,9 +87,9 @@ export default function Navbar() {
                         <div className="mega-cta">
                           <h4>Need a Consultation?</h4>
                           <p>Let's discuss your project over a coffee.</p>
-                          <Link to="/book-consultation" className="btn btn-primary btn-sm">
+                          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
                             Book Now
-                          </Link>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -118,9 +119,9 @@ export default function Navbar() {
           </ul>
 
           <div className="navbar-actions">
-            <Link to="/book-consultation" className="btn btn-primary btn-sm nav-consult-btn">
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm nav-consult-btn">
               Book Consultation
-            </Link>
+            </a>
           </div>
         </div>
 

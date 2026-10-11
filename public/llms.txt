@@ -38,6 +38,7 @@
 - [Shivani Kadoo](https://ashlar-studio.vercel.app/team/shivani-kadoo): Senior Architect
 - [Case studies](https://ashlar-studio.vercel.app/case-studies)
 - [Contact](https://ashlar-studio.vercel.app/contact)
+- [Book a consultation](https://bookasloth.com/pranavkadoo): live calendar with Pranav Kadoo
 
 ## Articles
 - [The Future of Sustainable Architecture](https://ashlar-studio.vercel.app/blog/future-of-sustainable-architecture)

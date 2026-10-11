@@ -10,7 +10,11 @@ export default function CTA({ title, description, buttonText, buttonLink = '/con
       <div className="container">
         <h2 className="cta-title">{title || "Let's Create Something Extraordinary Together"}</h2>
         <p className="cta-desc">{description || 'Ready to bring your vision to life? Our team is eager to collaborate with you.'}</p>
-        <Link to={buttonLink} className="btn btn-primary btn-lg">{buttonText || 'Start Your Project'}</Link>
+        {/^https?:/.test(buttonLink) ? (
+          <a href={buttonLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">{buttonText || 'Start Your Project'}</a>
+        ) : (
+          <Link to={buttonLink} className="btn btn-primary btn-lg">{buttonText || 'Start Your Project'}</Link>
+        )}
       </div>
     </section>
   );

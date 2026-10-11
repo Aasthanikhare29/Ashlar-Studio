@@ -7,6 +7,7 @@ import ProjectCard from '../components/ui/ProjectCard';
 import FAQAccordion from '../components/ui/FAQAccordion';
 import CTA from '../components/ui/CTA';
 import ComingSoon from './ComingSoon';
+import { BOOKING_URL } from '../data/site';
 import './ServiceDetail.css';
 
 export default function ServiceDetail() {
@@ -36,7 +37,7 @@ export default function ServiceDetail() {
               </p>
             )}
             <div className="sd-hero-actions">
-              <Link to="/book-consultation" className="btn btn-primary btn-lg">Book a Consultation</Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Book a Consultation</a>
               {related.length > 0 && <a href="#sd-work" className="sd-link">See our work ↓</a>}
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function ServiceDetail() {
       </section>
 
       <div className="container">
-        <CTA title={s.ctaTitle} description="Tell us about your project and brief. The first consultation is free." buttonText="Book a Consultation" buttonLink="/book-consultation" />
+        <CTA title={s.ctaTitle} description="Tell us about your project and brief. The first consultation is free." buttonText="Book a Consultation" buttonLink={BOOKING_URL} />
       </div>
     </div>
   );

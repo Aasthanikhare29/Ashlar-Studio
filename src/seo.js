@@ -5,6 +5,7 @@ import { teamMembers } from './data/team';
 import { services } from './data/services';
 import { faqs } from './data/faqs';
 import { serviceDetails } from './data/serviceDetails';
+import { BOOKING_URL } from './data/site';
 
 // ponytail: change when the custom domain goes live
 export const SITE_URL = 'https://ashlar-studio.vercel.app';
@@ -39,6 +40,7 @@ export const organization = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '10:00', closes: '16:00' },
   ],
   knowsAbout: services.map((s) => s.title),
+  potentialAction: { '@type': 'ReserveAction', name: 'Book a consultation', target: BOOKING_URL },
   // ponytail: add LinkedIn/Instagram/Houzz/Google Business URLs here once profiles exist
   sameAs: [],
 };
