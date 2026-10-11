@@ -1,4 +1,4 @@
-.sd-hero { padding: 6rem 0 2.5rem; }
+.sd-hero { padding: 2rem 0 2.5rem; }
 .sd-hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; }
 .sd-breadcrumb { display: flex; gap: 0.5rem; font-size: 0.85rem; color: var(--text-light); margin-bottom: 1rem; }
 .sd-breadcrumb a { text-decoration: none; }
@@ -7,7 +7,7 @@
 .sd-answer { font-size: 1.05rem; line-height: 1.6; color: var(--text-light); max-width: 38rem; margin-bottom: 1.75rem; }
 .sd-hero-actions { display: flex; align-items: center; gap: 1.75rem; flex-wrap: wrap; }
 /* Image never taller than the viewport, so the CTAs stay above the fold */
-.sd-hero-img { width: 100%; aspect-ratio: 4 / 5; max-height: calc(100vh - 9rem); object-fit: cover; border-radius: 6px; }
+.sd-hero-img { width: 100%; aspect-ratio: 4 / 5; max-height: calc(100vh - 7.5rem); object-fit: cover; border-radius: 6px; }
 .sd-link { color: var(--primary); font-weight: 600; text-decoration: none; }
 .sd-link:hover { text-decoration: underline; }
 
@@ -52,7 +52,7 @@
   .sd-process { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .sd-hero { padding-top: 6rem; }
+  .sd-hero { padding-top: 1.5rem; }
   .sd-facts, .sd-included, .sd-process { grid-template-columns: 1fr; }
   .sd-facts > div { border-left: none; padding-left: 0; border-top: 1px solid #e4e1da; }
   .sd-facts > div:first-child { border-top: none; }
