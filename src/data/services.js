@@ -16,12 +16,12 @@ export const services = [
     features: ['Space Planning', 'Material Selection', 'Furniture Design', 'Lighting Design', 'Styling & Staging'],
   },
   {
-    id: 'BIM',
+    id: 'bim',
     title: 'BIM',
     icon: 'BIM',
     image:'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80',
     description: 'We deliver BIM solutions for residential, commercial, institutional, etc. projects, integrating intelligent 3D modeling, coordinated documentation, clash detection, and efficient project collaboration from design to construction. ',
-    features: ['Garden Design', 'Hardscaping', 'Planting Design', 'Outdoor Living', 'Irrigation Planning'],
+    features: ['3D BIM Modelling', 'Coordinated Drawings', 'Clash Detection', 'Quantity Take-off', 'Design-to-Site Coordination'],
   },
   {
     id: 'visualization',

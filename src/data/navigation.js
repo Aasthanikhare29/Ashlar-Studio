@@ -1,7 +1,16 @@
+import { services } from './services';
+
 export const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
+  {
+    name: 'Services',
+    path: '/services',
+    dropdown: [
+      { name: 'All Services', path: '/services' },
+      ...services.map((s) => ({ name: s.title, path: `/services/${s.id}` })),
+    ],
+  },
   {
     name: 'Projects',
     path: '/projects',
@@ -9,19 +18,14 @@ export const navLinks = [
       {
         title: 'By Category',
         items: [
+          { name: 'All Projects', path: '/projects' },
           { name: 'Residential', path: '/projects?category=Residential' },
-          { name: 'Commercial', path: '/projects?category=Commercial' },
           { name: 'Hospitality', path: '/projects?category=Hospitality' },
-          { name: 'Interior Design', path: '/projects?category=Interior+Design' },
-          { name: 'Urban Planning', path: '/projects?category=Urban+Design' },
-          { name: 'Master Planning', path: '/projects?category=Master+Planning' },
         ],
       },
       {
-        title: 'Featured',
+        title: 'Explore',
         items: [
-          { name: 'Award Winners', path: '/projects?filter=award-winning' },
-          { name: 'Recent Projects', path: '/projects?filter=recent' },
           { name: 'Case Studies', path: '/case-studies' },
           { name: 'Project Gallery', path: '/gallery' },
         ],
@@ -30,12 +34,5 @@ export const navLinks = [
   },
   { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
-  {
-    name: 'More',
-    dropdown: [
-      { name: 'Careers', path: '/careers' },
-      { name: 'Gallery', path: '/gallery' },
-      { name: 'Case Studies', path: '/case-studies' },
-    ],
-  },
+  { name: 'Careers', path: '/careers' },
 ];

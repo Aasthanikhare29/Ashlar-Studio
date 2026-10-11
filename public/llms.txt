@@ -11,7 +11,15 @@
 - [All services](https://ashlar-studio.vercel.app/services): architecture, interior design, BIM, 3D visualization and walkthroughs, urban planning, sustainable design, renovation, turnkey solutions, land & building valuation. Includes an FAQ on process, timelines and fees.
 
 ## Service pages
-- [Architects in Nagpur](https://ashlar-studio.vercel.app/services/architecture): bungalows, G+2/G+3 homes and commercial buildings; NMC/NMRDA approval drawings, climate-responsive design, process, FAQs
+- [Architects in Nagpur for Homes, Bungalows & Commercial Buildings](https://ashlar-studio.vercel.app/services/architecture): Architects in Nagpur designing bungalows, G+2 homes and commercial buildings, from concept and NMC/NMRDA approval drawings to site supervision.
+- [Interior Designers in Nagpur for Homes, Offices & Restaurants](https://ashlar-studio.vercel.app/services/interior): Interior designers in Nagpur for homes, offices and restaurants: space planning, 3D views, material selection, joinery drawings and site coordination.
+- [BIM Services in Nagpur for Coordinated, Buildable Designs](https://ashlar-studio.vercel.app/services/bim): BIM services in Nagpur: coordinated 3D building models, clash checks, accurate quantities and drawing sets for homes and commercial buildings.
+- [3D Architectural Visualization & Walkthroughs in Nagpur](https://ashlar-studio.vercel.app/services/visualization): 3D architectural rendering and walkthrough videos in Nagpur: photoreal exterior and interior views that help owners decide before construction.
+- [Urban Planning & Layout Design in Nagpur](https://ashlar-studio.vercel.app/services/urban): Urban planning in Nagpur: layout planning, masterplans and site feasibility under UDCPR and NMRDA, led by an architect and urban planner.
+- [Sustainable, Climate-Responsive Architecture in Nagpur](https://ashlar-studio.vercel.app/services/sustainable): Sustainable architecture in Nagpur: passive cooling, shading, daylight and water planning for a hot climate, aligned with ECBC, GRIHA and IGBC.
+- [Home Renovation & Remodelling Architects in Nagpur](https://ashlar-studio.vercel.app/services/renovation): Home renovation architects in Nagpur: condition surveys, remodelling, floor additions and interior upgrades for older houses and wadas.
+- [Turnkey Design & Build Services in Nagpur](https://ashlar-studio.vercel.app/services/turnkey): Turnkey design and build in Nagpur: one team for design, approvals, procurement, contractors and site management through to handover.
+- [Land & Building Valuation Services in Nagpur](https://ashlar-studio.vercel.app/services/land-building-valuation): Land and building valuation in Nagpur for bank loans, legal matters, tax and family settlements, with site inspection and a written report.
 
 ## Projects (Nagpur)
 - [Wankhede Residence, Chinchbhawan](https://ashlar-studio.vercel.app/projects/wankhede-residence): three-storey home with a jaali-screened facade frame

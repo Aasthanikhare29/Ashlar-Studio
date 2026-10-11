@@ -44,14 +44,16 @@ export default function Navbar() {
               <li
   key={link.name}
   className="nav-item"
+  onMouseLeave={() => { if (window.matchMedia('(min-width: 1025px)').matches) { setMegaOpen(false); setDropdownOpen(null); } }}
   onMouseEnter={() => {
+    if (!window.matchMedia('(min-width: 1025px)').matches) return;
     if (link.megaMenu) setMegaOpen(true);
     if (link.dropdown) setDropdownOpen(link.name);
   }}
 >
                 {link.megaMenu ? (
                   <>
-                    <button className="nav-link" aria-haspopup="true" aria-expanded={megaOpen}>
+                    <button className="nav-link" aria-haspopup="true" aria-expanded={megaOpen} onClick={() => setMegaOpen((o) => !o)}>
                       {link.name} <Icon name="chevron-down" size={12} className="nav-arrow" />
                     </button>
                       <div
@@ -73,7 +75,7 @@ export default function Navbar() {
                         <div className="mega-cta">
                           <h4>Need a Consultation?</h4>
                           <p>Let's discuss your project over a coffee.</p>
-                          <Link to="/contact" className="btn btn-primary btn-sm">
+                          <Link to="/book-consultation" className="btn btn-primary btn-sm">
                             Book Now
                           </Link>
                         </div>
@@ -82,7 +84,7 @@ export default function Navbar() {
                   </>
                 ) : link.dropdown ? (
                   <>
-                    <button className="nav-link" aria-haspopup="true" aria-expanded={dropdownOpen === link.name}>
+                    <button className="nav-link" aria-haspopup="true" aria-expanded={dropdownOpen === link.name} onClick={() => setDropdownOpen((o) => (o === link.name ? null : link.name))}>
                       {link.name} <Icon name="chevron-down" size={12} className="nav-arrow" />
                     </button>
                     <ul
@@ -105,11 +107,6 @@ export default function Navbar() {
           </ul>
 
           <div className="navbar-actions">
-            <button className="nav-icon-btn" aria-label="Search">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-              </svg>
-            </button>
             <Link to="/book-consultation" className="btn btn-primary btn-sm nav-consult-btn">
               Book Consultation
             </Link>

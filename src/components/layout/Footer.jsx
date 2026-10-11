@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { services } from '../../data/services';
 import './Footer.css';
 
 export default function Footer() {
@@ -34,13 +35,9 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-heading">Services</h4>
             <ul className="footer-links">
-              <li><Link to="/services#architecture">Architecture</Link></li>
-              <li><Link to="/services#interior">Interior Design</Link></li>
-              <li><Link to="/services#landscape">BIM</Link></li>
-              <li><Link to="/services#urban">Urban Planning</Link></li>
-              <li><Link to="/services#visualization">3D Visualization</Link></li>
-              <li><Link to="/services#sustainable">Sustainable Design</Link></li>
-              <li><Link to="/services#renovation">Renovation</Link></li>
+              {services.map((s) => (
+                <li key={s.id}><Link to={`/services/${s.id}`}>{s.title}</Link></li>
+              ))}
             </ul>
           </div>
 

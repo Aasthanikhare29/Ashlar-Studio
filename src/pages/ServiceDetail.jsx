@@ -37,7 +37,7 @@ export default function ServiceDetail() {
             )}
             <div className="sd-hero-actions">
               <Link to="/book-consultation" className="btn btn-primary btn-lg">Book a Consultation</Link>
-              <a href="#sd-work" className="sd-link">See our work ↓</a>
+              {related.length > 0 && <a href="#sd-work" className="sd-link">See our work ↓</a>}
             </div>
           </div>
           <img className="sd-hero-img" src={s.heroImage} alt={s.heroAlt} />
@@ -55,7 +55,7 @@ export default function ServiceDetail() {
 
       <section className="section">
         <div className="container">
-          <h2 className="sd-h2">What's included in our architecture service?</h2>
+          <h2 className="sd-h2">{s.includedTitle}</h2>
           <div className="sd-included">
             {s.included.map((item, i) => (
               <article key={item.title}>
@@ -99,7 +99,7 @@ export default function ServiceDetail() {
       {related.length > 0 && (
         <section className="section section--light" id="sd-work">
           <div className="container">
-            <h2 className="sd-h2">Architecture projects in Nagpur</h2>
+            <h2 className="sd-h2">{s.projectsTitle}</h2>
             <div className="section-grid">
               {related.map((p, i) => <ProjectCard key={p.id} project={p} index={i} />)}
             </div>
@@ -110,7 +110,7 @@ export default function ServiceDetail() {
 
       <section className="section">
         <div className="container sd-faq">
-          <h2 className="sd-h2">Architecture FAQs</h2>
+          <h2 className="sd-h2">{title} FAQs</h2>
           <FAQAccordion items={s.faqs} />
           <p className="sd-related">
             Related services:{' '}
@@ -122,7 +122,7 @@ export default function ServiceDetail() {
       </section>
 
       <div className="container">
-        <CTA title="Planning a home in Nagpur?" description="Tell us about your plot and brief. The first consultation is free." buttonText="Book a Consultation" buttonLink="/book-consultation" />
+        <CTA title={s.ctaTitle} description="Tell us about your project and brief. The first consultation is free." buttonText="Book a Consultation" buttonLink="/book-consultation" />
       </div>
     </div>
   );
