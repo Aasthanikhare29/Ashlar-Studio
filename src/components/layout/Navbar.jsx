@@ -11,6 +11,14 @@ export default function Navbar() {
   const [megaOpen, setMegaOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+  const closeTimer = useRef(null);
+  const isDesktop = () => window.matchMedia('(min-width: 1025px)').matches;
+  // Small delay so the pointer can cross the gap between a nav item and its menu
+  const scheduleClose = () => {
+    clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => { setMegaOpen(false); setDropdownOpen(null); }, 200);
+  };
+  const cancelClose = () => clearTimeout(closeTimer.current);
   const isHome = location.pathname === '/';
 
   useEffect(() => {
@@ -44,9 +52,12 @@ export default function Navbar() {
               <li
   key={link.name}
   className="nav-item"
-  onMouseLeave={() => { if (window.matchMedia('(min-width: 1025px)').matches) { setMegaOpen(false); setDropdownOpen(null); } }}
+  onMouseLeave={() => { if (isDesktop()) scheduleClose(); }}
   onMouseEnter={() => {
-    if (!window.matchMedia('(min-width: 1025px)').matches) return;
+    if (!isDesktop()) return;
+    cancelClose();
+    if (link.megaMenu) setDropdownOpen(null);
+    if (link.dropdown) setMegaOpen(false);
     if (link.megaMenu) setMegaOpen(true);
     if (link.dropdown) setDropdownOpen(link.name);
   }}
@@ -58,8 +69,8 @@ export default function Navbar() {
                     </button>
                       <div
   className={`mega-menu ${megaOpen ? 'open' : ''}`}
-  onMouseEnter={() => setMegaOpen(true)}
-  onMouseLeave={() => setMegaOpen(false)}
+  onMouseEnter={cancelClose}
+  onMouseLeave={() => { if (isDesktop()) scheduleClose(); }}
 >
                       <div className="mega-menu-inner container-wide">
                         {link.megaMenu.map((col) => (
@@ -89,8 +100,8 @@ export default function Navbar() {
                     </button>
                     <ul
   className={`dropdown-menu ${dropdownOpen === link.name ? 'open' : ''}`}
-  onMouseEnter={() => setDropdownOpen(link.name)}
-  onMouseLeave={() => setDropdownOpen(null)}
+  onMouseEnter={cancelClose}
+  onMouseLeave={() => { if (isDesktop()) scheduleClose(); }}
 >
                       {link.dropdown.map((item) => (
                         <li key={item.name}><Link to={item.path} className="dropdown-link">{item.name}</Link></li>

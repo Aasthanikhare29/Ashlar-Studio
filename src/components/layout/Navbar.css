@@ -150,6 +150,8 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  /* become hoverable instantly; only the fade animates */
+  transition: opacity 0.2s ease, visibility 0s;
 }
 
 .dropdown-menu {
@@ -291,7 +293,20 @@
   z-index: 999;
 }
 
+/* Invisible bridge over the gap between nav item and its menu (desktop hover) */
+.dropdown-menu::before,
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 24px;
+}
+
 @media (max-width: 1024px) {
+  .dropdown-menu::before, .mega-menu::before { display: none; }
+
   .navbar-inner { padding: 0 1.25rem; }
 
   .navbar-menu {
