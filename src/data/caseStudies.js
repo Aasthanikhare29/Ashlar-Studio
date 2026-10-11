@@ -19,6 +19,11 @@ export const caseStudies = [
       '/projects/el-dorado-garden-restaurant/3.webp',
       '/projects/el-dorado-garden-restaurant/2.webp',
       '/projects/el-dorado-garden-restaurant/4.webp',
+      '/projects/el-dorado-garden-restaurant/1.webp',
+      '/projects/el-dorado-garden-restaurant/5.webp',
+      '/projects/el-dorado-garden-restaurant/6.webp',
+      '/projects/el-dorado-garden-restaurant/7.webp',
+      '/projects/el-dorado-garden-restaurant/8.webp',
     ],
   },
   {

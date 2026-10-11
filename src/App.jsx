@@ -20,7 +20,7 @@ import ThankYou from './pages/ThankYou';
 import NotFound from './pages/NotFound';
 import Legal from './pages/Legal';
 import Auth from './pages/Auth';
-import ComingSoon from './pages/ComingSoon';
+import ServiceDetail from './pages/ServiceDetail';
 import { getSeo } from './seo';
 
 function ScrollToTop() {
@@ -44,7 +44,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/services/:id" element={<ComingSoon />} />
+        <Route path="/services/:id" element={<ServiceDetail />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/blog" element={<Blog />} />

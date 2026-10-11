@@ -4,6 +4,7 @@ import { caseStudies } from './data/caseStudies';
 import { teamMembers } from './data/team';
 import { services } from './data/services';
 import { faqs } from './data/faqs';
+import { serviceDetails } from './data/serviceDetails';
 
 // ponytail: change when the custom domain goes live
 export const SITE_URL = 'https://ashlar-studio.vercel.app';
@@ -137,6 +138,20 @@ export function getSeo(path) {
       }));
     }
     if (path === '/about') teamMembers.forEach((m) => jsonLd.push(person(m)));
+  } else if (section === 'services' && serviceDetails[slug]) {
+    const d = serviceDetails[slug];
+    const svc = services.find((x) => x.id === slug);
+    seo = { title: d.metaTitle, description: d.metaDescription, image: SITE_URL + d.heroImage };
+    jsonLd.push(crumbs(['Services', '/services'], [svc.title, path]), {
+      '@context': 'https://schema.org', '@type': 'Service', name: `${svc.title} in Nagpur`, serviceType: svc.title,
+      description: d.answer, provider: { '@id': ORG_ID }, image: SITE_URL + d.heroImage,
+      areaServed: { '@type': 'City', name: 'Nagpur' },
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: `${svc.title} services`, itemListElement: d.included.map((i) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: i.title, description: i.text } })) },
+    }, {
+      '@context': 'https://schema.org', '@type': 'FAQPage',
+      // FAQs still waiting on client data stay out of schema
+      mainEntity: d.faqs.filter((f) => !f.answer.includes(EMPTY)).map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+    });
   } else if (section === 'blog' && slug) {
     const p = blogPosts.find((x) => x.slug === slug);
     if (p) {
@@ -185,6 +200,7 @@ export function getSeo(path) {
 // Every indexable URL â€” used by the prerender script for HTML + sitemap.xml
 export const routes = [
   ...Object.keys(STATIC),
+  ...Object.keys(serviceDetails).map((id) => `/services/${id}`),
   ...blogPosts.map((p) => `/blog/${p.slug}`),
   ...projects.map((p) => `/projects/${p.slug}`),
   ...caseStudies.map((c) => `/case-studies/${c.slug}`),

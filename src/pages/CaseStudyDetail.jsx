@@ -41,18 +41,24 @@ export default function CaseStudyDetail() {
         </div>
       </section>
 
+      {cs.images?.length > 0 && (
+        <section className="casestudy-gallery-wrap">
+          <div className="container">
+            <div className="casestudy-gallery" style={{ columnCount: Math.min(4, cs.images.length) }}>
+              {cs.images.map((img, i) => (
+                <button key={img} type="button" className="casestudy-image" onClick={() => { setLightboxIndex(i); setLightboxOpen(true); }} aria-label={`Open image ${i + 1} of ${cs.images.length}`}>
+                  <img src={img} alt={`${cs.title}, view ${i + 1}`} loading="lazy" />
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section">
         <div className="container">
-          <div className="casestudy-grid">
+          <div className={`casestudy-grid ${cs.testimonial ? '' : 'casestudy-grid--full'}`}>
             <div className="casestudy-main">
-              <div className="casestudy-gallery">
-                {cs.images?.map((img, i) => (
-                  <div key={i} className="casestudy-image" onClick={() => { setLightboxIndex(i); setLightboxOpen(true); }}>
-                    <img src={img} alt={`${cs.title} ${i + 1}`} loading="lazy" />
-                  </div>
-                ))}
-              </div>
-
               <div className="casestudy-section">
                 <h2>The Challenge</h2>
                 <p>{cs.challenge}</p>
@@ -67,15 +73,15 @@ export default function CaseStudyDetail() {
               </div>
             </div>
 
-            <aside className="casestudy-sidebar">
-              {cs.testimonial && (
+            {cs.testimonial && (
+              <aside className="casestudy-sidebar">
                 <div className="casestudy-testimonial">
                   <Icon name="quote" size={24} />
                   <p>"{cs.testimonial.quote}"</p>
                   <span>— {cs.testimonial.author}</span>
                 </div>
-              )}
-            </aside>
+              </aside>
+            )}
           </div>
         </div>
       </section>
